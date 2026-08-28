@@ -130,7 +130,17 @@ def process_response_dataframe(raw_df: pd.DataFrame) -> pd.DataFrame:
 def read_csv_required(path: Path) -> pd.DataFrame:
     if not path.exists():
         raise FileNotFoundError(f'Expected input file not found: {path}\nPut {CONTROL_CSV}, {EXPERIMENTAL_CSV}, and {GROUND_TRUTH_CSV} in {DATA_DIR}/.')
-    return pd.read_csv(path)
+    df = pd.read_csv(path)
+    # Some Qualtrics exports are prefixed by a single dataset-name line before
+    # the actual comma-separated header. In that case pandas sees one column
+    # and silently places each subsequent CSV row into the index.
+    if len(df.columns) == 1:
+        with path.open('r', encoding='utf-8-sig') as handle:
+            first_line = handle.readline()
+            second_line = handle.readline()
+        if ',' not in first_line and ',' in second_line:
+            df = pd.read_csv(path, skiprows=1)
+    return df
 
 def load_and_clean_data(data_dir: Path=DATA_DIR) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     df_con_raw = read_csv_required(data_dir / CONTROL_CSV)

@@ -21,6 +21,18 @@ def first_existing(data_dir: Path, names: Iterable[str]) -> Path:
     expected = '\n  - '.join((str(p) for p in candidates))
     raise FileNotFoundError(f'Could not find any of these input files:\n  - {expected}')
 
+def read_csv_export(path: Path) -> pd.DataFrame:
+    df = pd.read_csv(path)
+    # Some Qualtrics exports include a dataset-name wrapper line before the
+    # actual comma-separated header. Retry from the real header when detected.
+    if len(df.columns) == 1:
+        with path.open('r', encoding='utf-8-sig') as handle:
+            first_line = handle.readline()
+            second_line = handle.readline()
+        if ',' not in first_line and ',' in second_line:
+            df = pd.read_csv(path, skiprows=1)
+    return df
+
 def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
     new_cols = {}
     current_group = None
@@ -64,7 +76,7 @@ def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
 
 def drop_metadata_rows(df: pd.DataFrame) -> pd.DataFrame:
     if len(df) >= 2:
-        return df.drop(index=[0, 1]).reset_index(drop=True)
+        return df.iloc[2:].reset_index(drop=True)
     return df.reset_index(drop=True)
 
 def process_ground_truth(gt: pd.DataFrame) -> pd.DataFrame:
@@ -102,9 +114,9 @@ def load_processed_data(data_dir: Path) -> tuple[pd.DataFrame, dict[str, object]
     gt_path = first_existing(data_dir, ['sagat_ground_truth_answers.csv'])
     exp_path = first_existing(data_dir, ['sagat_experimental_responses.csv'])
     con_path = first_existing(data_dir, ['sagat_control_responses.csv'])
-    df_exp = pd.read_csv(exp_path).dropna()
-    df_con = pd.read_csv(con_path).dropna()
-    gt_raw = pd.read_csv(gt_path)
+    df_exp = read_csv_export(exp_path).dropna()
+    df_con = read_csv_export(con_path).dropna()
+    gt_raw = read_csv_export(gt_path)
     df_exp = drop_metadata_rows(normalize_columns(df_exp))
     df_con = drop_metadata_rows(normalize_columns(df_con))
     gt_df = process_ground_truth(gt_raw)
