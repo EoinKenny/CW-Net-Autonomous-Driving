@@ -1,0 +1,21 @@
+Notice
+
+This repository accompanies the paper:
+
+Kenny et al., "Explainable deep learning improves human mental models of self-driving cars", Nature, 2026.
+
+This repository contains source code, anonymised data, and user-study materials released to support reproducibility of the analyses reported in the paper.
+
+The source code is licensed separately under LICENSE.txt.
+
+The anonymised data files are licensed separately under LICENSE-DATA.txt.
+
+The user-study materials, including video stimuli showing vehicle driving scenes with overlaid concept activations, are licensed separately under LICENSE-MATERIALS.txt.
+
+This work was conducted in collaboration with Motional, the Massachusetts Institute of Technology, and Harvard University.
+
+Please cite the associated paper when using this repository.
+
+This repository is provided for research reproducibility purposes. The release does not include raw video files, raw vehicle logs, raw sensor streams, internal model checkpoints, participant identifiers, reviewer names, or confidential Motional engineering materials.
+
+No endorsement by Motional, MIT, or any individual contributor is implied by use of this repository.

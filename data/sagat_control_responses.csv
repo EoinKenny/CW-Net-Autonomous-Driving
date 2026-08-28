@@ -1,0 +1,222 @@
+Duration (in seconds),Finished,tp_First Click,tp_Last Click,tp_Page Submit,tp_Click Count,p3_1,p3_2,p3_3,p3_4,p3_5,p3_6,tcp1_First Click,tcp1_Last Click,tcp1_Page Submit,tcp1_Click Count,cp13_1,cp13_2,cp13_3,cp13_4,cp13_5,cp13_6,tcn1_First Click,tcn1_Last Click,tcn1_Page Submit,tcn1_Click Count,Q140_1,Q140_2,Q140_3,Q140_4,Q140_5,Q140_6,tap1_First Click,tap1_Last Click,tap1_Page Submit,tap1_Click Count,Q141_1,Q141_2,Q141_3,Q141_4,Q141_5,Q141_6,tan1_First Click,tan1_Last Click,tan1_Page Submit,tan1_Click Count,Q142_1,Q142_2,Q142_3,Q142_4,Q142_5,Q142_6,tbp1_First Click,tbp1_Last Click,tbp1_Page Submit,tbp1_Click Count,Q143_1,Q143_2,Q143_3,Q143_4,Q143_5,Q143_6,tbn1_First Click,tbn1_Last Click,tbn1_Page Submit,tbn1_Click Count,Q144_1,Q144_2,Q144_3,Q144_4,Q144_5,Q144_6,tac1_First Click,tac1_Last Click,tac1_Page Submit,tac1_Click Count,Q145_1,Q145_2,Q145_3,Q145_4,Q145_5,Q145_6,tcp2_First Click,tcp2_Last Click,tcp2_Page Submit,tcp2_Click Count,Q147_1,Q147_2,Q147_3,Q147_4,Q147_5,Q147_6,tcn2_First Click,tcn2_Last Click,tcn2_Page Submit,tcn2_Click Count,Q148_1,Q148_2,Q148_3,Q148_4,Q148_5,Q148_6,tap2_First Click,tap2_Last Click,tap2_Page Submit,tap2_Click Count,Q149_1,Q149_2,Q149_3,Q149_4,Q149_5,Q149_6,tan2_First Click,tan2_Last Click,tan2_Page Submit,tan2_Click Count,Q150_1,Q150_2,Q150_3,Q150_4,Q150_5,Q150_6,tbp2_First Click,tbp2_Last Click,tbp2_Page Submit,tbp2_Click Count,Q151_1,Q151_2,Q151_3,Q151_4,Q151_5,Q151_6,tbn2_First Click,tbn2_Last Click,tbn2_Page Submit,tbn2_Click Count,Q152_1,Q152_2,Q152_3,Q152_4,Q152_5,Q152_6
+Duration (in seconds),Finished,Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Was there a straight road in the video?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect a straight road?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV driving straight partly because it detected a straight road?","Step 2:
+
+Please answer the following questions carefully. - If there was a traffic jam ahead, would the AV have stopped?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Is the other vehicle to the AV's immediate left affecting its willingness to move?","Step 2:
+
+Please answer the following questions carefully. - When the light goes green, would the AV move faster if the car to its immediate left was gone?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV slow down partly because of the speed bump and stop sign?","Step 2:
+
+Please answer the following questions carefully. - If the speed bump and stop sign were gone, would the AV have moved faster?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV mainly stop because it detected the pedestrian?","Step 2:
+
+Please answer the following questions carefully. - If the pedestrian was not present at the end, would the AV still have stopped?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV stop mainly because it detected it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - If the stopped vehicle at the end was not in front of the AV, would the AV have moved further forward?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV stop partly because it detected pedestrians?","Step 2:
+
+Please answer the following questions carefully. - Does the video make you significantly more wary of the AV than you were before watching?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV stop partly because it detected the other cars in front of it and the red light?","Step 2:
+
+Please answer the following questions carefully. - If there were no other cars and the light was green, would the AV move forward?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter an intersection?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect an intersection?","Step 2:
+
+Please answer the following questions carefully. - Please select Yes to indicate you are paying attention","Step 2:
+
+Please answer the following questions carefully. - Please select No to indicate you are paying attention","Step 2:
+
+Please answer the following questions carefully. - Please select Yes to indicate you are paying attention","Step 2:
+
+Please answer the following questions carefully. - Please select No to indicate you are paying attention",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV drive cautiously towards the end partly because it detected pedestrians nearby?","Step 2:
+
+Please answer the following questions carefully. - If the red car was absent, would the AV have moved faster at the end?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV slow down partly because of the speed bump and stop sign?","Step 2:
+
+Please answer the following questions carefully. - If the speed bump and stop sign were not there, would the AV have moved faster?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the pedestrian traversing the crosswalk at the end the main thing effecting the AV's speed?","Step 2:
+
+Please answer the following questions carefully. - If the pedestrian traversing the crosswalk at the end was not there, would the AV have behaved similarly?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV slow down mostly because it detected it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - If there was no stopped vehicle in front of the AV at the end, would it have moved a bit further ahead?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV stop mostly because it detected pedestrians?","Step 2:
+
+Please answer the following questions carefully. - Does the video make you significantly more wary of the AV than you were before watching?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV stop mostly because it detected the stopped vehicle in front of it?","Step 2:
+
+Please answer the following questions carefully. - If there was no stopped vehicle in front of the AV at the end, would it move a bit further ahead?"
+"{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""QID122_FIRST_CLICK""}","{""ImportId"":""QID122_LAST_CLICK""}","{""ImportId"":""QID122_PAGE_SUBMIT""}","{""ImportId"":""QID122_CLICK_COUNT""}","{""ImportId"":""QID56_1""}","{""ImportId"":""QID56_2""}","{""ImportId"":""QID56_3""}","{""ImportId"":""QID56_4""}","{""ImportId"":""QID56_5""}","{""ImportId"":""QID56_6""}","{""ImportId"":""QID123_FIRST_CLICK""}","{""ImportId"":""QID123_LAST_CLICK""}","{""ImportId"":""QID123_PAGE_SUBMIT""}","{""ImportId"":""QID123_CLICK_COUNT""}","{""ImportId"":""QID61_1""}","{""ImportId"":""QID61_2""}","{""ImportId"":""QID61_3""}","{""ImportId"":""QID61_4""}","{""ImportId"":""QID61_5""}","{""ImportId"":""QID61_6""}","{""ImportId"":""QID125_FIRST_CLICK""}","{""ImportId"":""QID125_LAST_CLICK""}","{""ImportId"":""QID125_PAGE_SUBMIT""}","{""ImportId"":""QID125_CLICK_COUNT""}","{""ImportId"":""QID140_1""}","{""ImportId"":""QID140_2""}","{""ImportId"":""QID140_3""}","{""ImportId"":""QID140_4""}","{""ImportId"":""QID140_5""}","{""ImportId"":""QID140_6""}","{""ImportId"":""QID127_FIRST_CLICK""}","{""ImportId"":""QID127_LAST_CLICK""}","{""ImportId"":""QID127_PAGE_SUBMIT""}","{""ImportId"":""QID127_CLICK_COUNT""}","{""ImportId"":""QID141_1""}","{""ImportId"":""QID141_2""}","{""ImportId"":""QID141_3""}","{""ImportId"":""QID141_4""}","{""ImportId"":""QID141_5""}","{""ImportId"":""QID141_6""}","{""ImportId"":""QID129_FIRST_CLICK""}","{""ImportId"":""QID129_LAST_CLICK""}","{""ImportId"":""QID129_PAGE_SUBMIT""}","{""ImportId"":""QID129_CLICK_COUNT""}","{""ImportId"":""QID142_1""}","{""ImportId"":""QID142_2""}","{""ImportId"":""QID142_3""}","{""ImportId"":""QID142_4""}","{""ImportId"":""QID142_5""}","{""ImportId"":""QID142_6""}","{""ImportId"":""QID131_FIRST_CLICK""}","{""ImportId"":""QID131_LAST_CLICK""}","{""ImportId"":""QID131_PAGE_SUBMIT""}","{""ImportId"":""QID131_CLICK_COUNT""}","{""ImportId"":""QID143_1""}","{""ImportId"":""QID143_2""}","{""ImportId"":""QID143_3""}","{""ImportId"":""QID143_4""}","{""ImportId"":""QID143_5""}","{""ImportId"":""QID143_6""}","{""ImportId"":""QID133_FIRST_CLICK""}","{""ImportId"":""QID133_LAST_CLICK""}","{""ImportId"":""QID133_PAGE_SUBMIT""}","{""ImportId"":""QID133_CLICK_COUNT""}","{""ImportId"":""QID144_1""}","{""ImportId"":""QID144_2""}","{""ImportId"":""QID144_3""}","{""ImportId"":""QID144_4""}","{""ImportId"":""QID144_5""}","{""ImportId"":""QID144_6""}","{""ImportId"":""QID135_FIRST_CLICK""}","{""ImportId"":""QID135_LAST_CLICK""}","{""ImportId"":""QID135_PAGE_SUBMIT""}","{""ImportId"":""QID135_CLICK_COUNT""}","{""ImportId"":""QID145_1""}","{""ImportId"":""QID145_2""}","{""ImportId"":""QID145_3""}","{""ImportId"":""QID145_4""}","{""ImportId"":""QID145_5""}","{""ImportId"":""QID145_6""}","{""ImportId"":""QID124_FIRST_CLICK""}","{""ImportId"":""QID124_LAST_CLICK""}","{""ImportId"":""QID124_PAGE_SUBMIT""}","{""ImportId"":""QID124_CLICK_COUNT""}","{""ImportId"":""QID147_1""}","{""ImportId"":""QID147_2""}","{""ImportId"":""QID147_3""}","{""ImportId"":""QID147_4""}","{""ImportId"":""QID147_5""}","{""ImportId"":""QID147_6""}","{""ImportId"":""QID126_FIRST_CLICK""}","{""ImportId"":""QID126_LAST_CLICK""}","{""ImportId"":""QID126_PAGE_SUBMIT""}","{""ImportId"":""QID126_CLICK_COUNT""}","{""ImportId"":""QID148_1""}","{""ImportId"":""QID148_2""}","{""ImportId"":""QID148_3""}","{""ImportId"":""QID148_4""}","{""ImportId"":""QID148_5""}","{""ImportId"":""QID148_6""}","{""ImportId"":""QID128_FIRST_CLICK""}","{""ImportId"":""QID128_LAST_CLICK""}","{""ImportId"":""QID128_PAGE_SUBMIT""}","{""ImportId"":""QID128_CLICK_COUNT""}","{""ImportId"":""QID149_1""}","{""ImportId"":""QID149_2""}","{""ImportId"":""QID149_3""}","{""ImportId"":""QID149_4""}","{""ImportId"":""QID149_5""}","{""ImportId"":""QID149_6""}","{""ImportId"":""QID130_FIRST_CLICK""}","{""ImportId"":""QID130_LAST_CLICK""}","{""ImportId"":""QID130_PAGE_SUBMIT""}","{""ImportId"":""QID130_CLICK_COUNT""}","{""ImportId"":""QID150_1""}","{""ImportId"":""QID150_2""}","{""ImportId"":""QID150_3""}","{""ImportId"":""QID150_4""}","{""ImportId"":""QID150_5""}","{""ImportId"":""QID150_6""}","{""ImportId"":""QID132_FIRST_CLICK""}","{""ImportId"":""QID132_LAST_CLICK""}","{""ImportId"":""QID132_PAGE_SUBMIT""}","{""ImportId"":""QID132_CLICK_COUNT""}","{""ImportId"":""QID151_1""}","{""ImportId"":""QID151_2""}","{""ImportId"":""QID151_3""}","{""ImportId"":""QID151_4""}","{""ImportId"":""QID151_5""}","{""ImportId"":""QID151_6""}","{""ImportId"":""QID134_FIRST_CLICK""}","{""ImportId"":""QID134_LAST_CLICK""}","{""ImportId"":""QID134_PAGE_SUBMIT""}","{""ImportId"":""QID134_CLICK_COUNT""}","{""ImportId"":""QID152_1""}","{""ImportId"":""QID152_2""}","{""ImportId"":""QID152_3""}","{""ImportId"":""QID152_4""}","{""ImportId"":""QID152_5""}","{""ImportId"":""QID152_6""}"
+734,1,2.879,7.847,31.092,2,1,1,2,2,1,1,0,0,26.973,0,2,2,2,2,2,2,5.074,5.074,22.326,1,2,2,2,2,1,1,4.329,4.329,53.764,1,2,2,2,2,1,2,5.13,5.13,25.408,1,1,1,1,1,1,1,4.136,4.136,35.782,1,1,1,2,2,1,1,0,0,25.377,0,2,2,2,2,1,1,5.408,5.408,27.276,1,1,1,1,2,1,2,0,0,55.389,0,1,1,1,1,1,1,0,0,15.12,0,2,2,2,2,1,1,3.658,3.658,31.856,1,2,2,1,1,1,1,3.756,4.25,23.218,2,1,1,1,1,1,1,0,0,23.412,0,1,2,2,2,2,2,4.363,4.363,21.407,1,2,2,2,2,1,1
+969,1,0,0,26.976,0,1,1,2,2,1,1,0,0,19.398,0,2,2,1,1,1,1,0,0,20.634,0,1,2,2,2,1,2,0,0,44.527,0,2,2,1,1,1,2,0,0,26.847,0,1,1,1,1,1,1,0,0,49.021,0,1,1,2,2,1,1,0,0,33.264,0,2,2,2,2,1,1,0,0,28.766,0,2,2,1,2,1,2,0,0,63.491,0,1,1,1,1,1,2,0,0,16.532,0,2,2,2,2,1,1,0,0,32.033,0,2,2,2,2,1,1,0,0,22.045,0,1,1,1,1,1,1,0,0,29.096,0,1,1,2,2,1,1,0,0,25.647,0,2,2,2,2,1,1
+893,1,0,0,27.055,0,1,1,2,1,1,1,0,0,29.708,0,2,2,1,1,2,1,0,0,21.497,0,2,2,2,2,1,1,0,0,43.977,0,1,1,1,1,1,2,0,0,38.928,0,1,1,1,1,1,1,0,0,53.561,0,1,1,2,2,1,2,0,0,31.15,0,2,2,2,2,1,1,0,0,46.087,0,1,1,1,2,1,2,0,0,61.576,0,1,1,1,1,2,1,0,0,16.613,0,2,2,2,2,1,1,0,0,31.386,0,1,1,1,1,1,2,0,0,21.856,0,1,1,1,1,1,1,0,0,32.173,0,1,1,2,2,1,2,0,0,21.354,0,1,2,2,2,1,1
+2069,1,0,0,54.301,0,1,1,2,2,1,1,0,0,29.617,0,2,2,2,2,2,1,0,0,24.801,0,2,2,2,2,1,2,0,0,74.101,0,1,1,1,1,1,2,0,0,35.686,0,1,1,1,1,1,1,0,0,71.304,0,1,1,2,2,1,1,0,0,139.998,0,2,2,2,2,1,1,0,0,75.935,0,1,1,1,2,1,2,0,0,64.602,0,1,1,1,1,2,1,0,0,41.609,0,2,2,2,2,1,1,0,0,91.545,0,2,2,2,2,1,1,0,0,23.277,0,1,1,1,2,1,1,0,0,31.983,0,1,1,2,2,1,1,0,0,26.034,0,2,2,2,2,1,1
+2184,1,1.687,29.232,30.001,8,1,1,2,2,2,1,9.18,103.812,104.506,4,2,2,2,2,1,1,23.688,53.303,53.954,9,2,2,2,2,1,1,2.677,256.928,258.085,2,2,2,1,1,1,2,3.561,30.974,31.808,6,1,1,1,1,1,1,3.171,44.258,44.956,4,1,1,1,1,1,1,2.722,46.18,67.979,2,2,2,2,2,1,1,56.676,69.036,69.703,2,1,1,1,2,1,2,48.694,54.345,59.901,4,1,1,1,1,1,1,2.291,18.245,18.902,3,2,2,2,2,1,1,0,0,27.478,0,1,1,2,1,1,2,4.434,23.673,24.9,4,1,1,1,1,1,1,37.375,37.375,38.17,1,1,1,2,2,1,1,28.559,28.559,30.071,1,1,1,2,2,1,1
+953,1,0,0,13.832,0,1,1,2,2,1,2,0,0,29.139,0,2,2,1,1,2,2,0,0,51.36,0,2,2,2,2,1,1,0,0,38.215,0,2,2,2,2,1,2,0,0,28.191,0,1,1,2,2,1,1,0,0,41.311,0,1,1,1,1,1,1,0,0,78.877,0,2,2,2,2,1,1,0,0,25.053,0,1,1,1,2,1,2,0,0,64.607,0,1,1,1,1,2,1,0,0,19.26,0,2,2,2,2,1,1,0,0,22.973,0,1,1,2,2,2,1,0,0,24.521,0,1,1,2,2,1,1,0,0,28.776,0,1,1,2,2,1,2,0,0,15.396,0,2,2,2,2,1,1
+444,0,0,0,23.834,0,1,2,2,2,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+807,1,4.431,28.388,30.016,2,1,1,2,2,1,1,6.054,33.623,34.802,2,2,2,2,2,2,2,22.411,22.411,23.66,1,2,2,2,2,1,1,58.83,58.83,60.018,1,2,2,1,1,1,2,33.972,33.972,35.189,1,1,1,1,1,1,1,6.609,43.159,44.442,2,1,1,2,2,1,2,29.097,29.097,30.263,1,2,2,2,2,1,1,30.413,30.413,31.609,1,1,1,1,2,1,2,25.432,25.432,61.076,1,1,1,1,1,2,1,14.255,14.255,15.348,1,2,2,2,2,1,1,28.969,28.969,30.06,1,2,2,2,2,1,2,24.608,24.608,26.146,1,1,1,1,1,1,1,25.43,25.43,26.555,1,1,1,2,2,1,2,19.247,19.247,20.471,1,2,2,2,2,1,1
+949,1,24.141,24.141,27.112,1,1,1,2,2,1,1,8.023,8.965,28.734,2,2,2,2,2,2,1,0,0,22.918,0,2,2,2,2,1,1,6.135,6.135,24.774,1,1,1,1,1,1,2,0,0,23.106,0,1,1,1,1,1,2,30.676,32.225,33.976,2,1,1,2,2,1,2,0,0,21.737,0,2,2,2,2,1,1,18.213,18.213,31.997,1,1,1,1,2,1,2,0,0,64.066,0,1,1,1,1,2,1,0,0,14.429,0,2,2,2,2,1,2,0,0,54.457,0,2,2,2,2,1,2,0,0,22.387,0,1,1,1,1,1,2,0,0,31.06,0,1,1,2,2,1,2,0,0,24.018,0,1,2,2,2,1,1
+861,1,0,0,25.348,0,1,1,2,2,1,2,0,0,39.602,0,2,2,2,2,2,1,0,0,10.899,0,2,2,2,2,1,2,0,0,27.495,0,2,2,2,2,1,2,56.682,56.682,79.756,1,1,1,1,1,1,2,0,0,42.197,0,1,1,2,2,1,1,0,0,23.936,0,2,2,2,2,2,2,69.643,69.643,89.615,1,1,1,1,2,1,2,5.742,5.742,52.062,1,1,1,1,1,1,2,0,0,8.614,0,2,2,2,2,1,1,0,0,23.214,0,2,2,2,2,1,2,0,0,21.495,0,1,1,1,1,1,1,0,0,20.306,0,1,1,2,2,1,2,0,0,14.049,0,2,1,2,2,1,1
+1110,1,0,0,17.345,0,1,1,2,2,1,1,0,0,26.55,0,2,2,2,2,2,2,0,0,18.947,0,2,2,2,2,1,1,0,0,72.27,0,1,1,1,2,1,2,0,0,28.757,0,1,1,1,1,1,1,0,0,37.582,0,1,1,2,2,1,2,0,0,23.597,0,2,2,2,2,1,1,0,0,24.138,0,1,1,1,2,1,2,0,0,54.841,0,1,1,1,1,1,1,0,0,23.914,0,2,2,2,2,1,1,0,0,60.751,0,1,1,1,1,1,2,0,0,22.751,0,1,1,1,1,1,1,0,0,32.017,0,1,1,2,2,1,2,0,0,26.078,0,2,2,2,2,1,1
+1524,1,0,0,25.693,0,1,1,2,2,1,1,0,0,118.857,0,2,2,1,2,2,2,0,0,42.253,0,2,2,2,2,1,1,0,0,54.674,0,2,2,2,2,1,2,0,0,107.816,0,1,1,1,1,1,1,0,0,59.465,0,1,1,2,2,1,2,0,0,52.644,0,2,2,2,2,1,1,0,0,23.997,0,1,1,1,2,1,2,0,0,101.738,0,1,1,1,1,2,1,0,0,13.333,0,2,2,2,2,1,1,0,0,71.004,0,1,1,1,1,2,1,0,0,23.904,0,1,1,1,1,1,1,0,0,32.108,0,1,1,2,2,2,2,0,0,24.27,0,2,2,2,2,1,1
+818,1,0,0,30.885,0,1,1,2,2,1,1,0,0,14.654,0,2,2,2,2,2,2,0,0,14.733,0,2,2,2,2,2,2,0,0,94.7,0,2,2,2,2,1,1,0,0,20.94,0,1,1,1,1,1,2,0,0,56.775,0,1,1,2,2,1,2,0,0,22.318,0,2,2,2,2,2,1,0,0,21.444,0,1,1,1,2,1,2,0,0,51.172,0,1,1,1,1,2,1,0,0,119.699,0,2,2,2,2,1,1,0,0,31.858,0,2,2,2,2,1,2,0,0,17.222,0,1,1,1,1,1,1,0,0,18.293,0,1,1,2,2,1,2,0,0,13.371,0,2,2,2,2,1,1
+1243,1,0,0,25.887,0,1,1,2,2,1,2,0,0,31.657,0,2,2,1,2,2,1,0,0,22.191,0,2,2,2,2,1,1,0,0,87.2,0,2,2,1,1,1,2,0,0,28.66,0,1,1,1,1,1,1,0,0,39.09,0,1,1,2,2,1,1,0,0,59.83,0,2,2,2,2,2,2,0,0,34.821,0,1,1,1,2,1,2,0,0,94.343,0,1,1,1,1,1,2,0,0,21.447,0,2,2,2,2,1,1,0,0,62.342,0,2,2,2,2,1,2,0,0,27.373,0,1,1,1,1,1,1,0,0,25.702,0,1,1,2,2,1,2,0,0,40.573,0,2,2,2,2,1,1
+1417,1,0,0,32.65,0,1,1,2,2,1,1,0,0,76.663,0,2,2,2,2,2,1,0,0,32.88,0,2,2,2,2,1,1,0,0,60.186,0,2,2,2,2,1,2,0,0,63.251,0,1,1,1,1,1,2,0,0,57.465,0,1,1,2,2,1,2,0,0,37.105,0,2,2,2,2,1,1,0,0,44.802,0,1,1,1,2,1,2,0,0,81.572,0,1,1,1,1,1,2,0,0,54.466,0,2,2,2,2,1,1,0,0,54.403,0,2,2,2,2,1,1,0,0,74.554,0,1,1,1,1,1,1,0,0,63.288,0,1,1,2,2,1,2,0,0,40.701,0,2,2,2,2,1,1
+908,1,0,0,18.001,0,1,1,2,2,1,2,0,0,26.301,0,1,2,1,1,2,1,0,0,19.418,0,2,2,2,2,1,1,0,0,63.794,0,1,1,1,1,1,2,0,0,28.397,0,1,1,1,1,1,1,0,0,37.28,0,1,1,2,2,1,2,0,0,26.72,0,2,2,2,2,1,1,0,0,28.56,0,1,1,1,2,1,2,0,0,61.089,0,1,1,1,1,2,1,0,0,16.685,0,2,2,2,2,1,2,0,0,54.9,0,2,2,2,2,1,2,0,0,23.287,0,1,1,1,1,1,1,0,0,31.172,0,1,1,2,2,1,2,0,0,70.88,0,2,2,2,2,1,1
+682,1,0,0,24.711,0,1,1,2,2,1,1,46.895,46.895,47.396,1,2,2,1,2,2,2,16.423,16.423,17.012,1,2,2,2,2,1,2,0,0,27.607,0,2,2,1,1,1,2,0,0,35.258,0,1,1,1,1,1,1,0,0,32.306,0,1,2,2,2,2,1,0,0,28.412,0,2,2,2,2,2,2,0,0,35.925,0,1,1,1,2,1,2,0,0,55.575,0,1,1,1,1,2,2,0,0,13.99,0,2,2,2,2,1,1,0,0,24.053,0,1,1,1,1,2,1,0,0,21.726,0,1,1,1,1,1,1,0,0,21.858,0,1,1,2,2,1,2,0,0,14.904,0,1,2,2,2,1,1
+1386,1,3.702,10.108,89.249,5,1,1,2,2,2,2,7.584,69.921,70.635,7,2,2,2,2,1,2,8.11,39.498,40.113,6,2,2,2,2,1,1,5.054,108.353,109.041,4,2,2,1,1,1,2,5.807,54.796,55.259,9,1,1,1,1,1,1,2.947,52.208,52.925,2,1,1,1,1,1,1,8.596,35.283,36.101,3,2,2,2,2,1,1,6.581,34.495,35.176,3,1,1,1,2,1,2,9.364,71.242,71.847,2,1,1,1,1,1,1,27.558,27.558,28.255,1,2,2,2,2,1,1,2.014,65.721,66.317,5,1,1,2,2,1,2,23.031,23.031,23.667,1,1,1,1,1,1,2,7.5,56.755,57.424,3,1,1,2,2,1,1,52.34,71.689,72.255,3,1,1,2,2,1,1
+881,1,0,0,30.172,0,1,2,2,2,2,1,0,0,34.103,0,1,2,1,2,2,2,0,0,20.466,0,2,2,2,2,1,2,0,0,26.05,0,1,1,1,1,1,2,0,0,25.714,0,1,2,1,2,2,1,0,0,33.033,0,1,2,2,2,2,1,0,0,34.166,0,2,2,2,2,2,1,0,0,21.567,0,1,1,1,2,1,2,0,0,55.89,0,1,1,1,1,2,1,0,0,11.861,0,2,2,2,2,1,1,0,0,25.895,0,1,2,1,2,2,2,0,0,22.875,0,1,2,2,2,1,1,0,0,22.209,0,1,1,2,2,1,1,0,0,16.489,0,2,2,2,2,1,1
+5848,0,0,0,26.956,0,1,1,1,1,2,1,0,0,21.698,0,1,1,2,1,1,2,0,0,21.775,0,1,1,1,1,1,1,0,0,29.436,0,1,1,1,1,1,1,0,0,5.259,0,1,2,1,2,1,1,0,0,14.295,0,1,1,1,1,1,2,0,0,13.001,0,1,2,1,2,1,2,0,0,11.46,0,2,1,2,1,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1906,1,0,0,40.542,0,1,2,2,2,1,1,0,0,64.19,0,2,2,1,2,2,1,0,0,40.699,0,2,1,2,2,1,1,0,0,98.702,0,2,2,1,2,1,2,0,0,65.572,0,1,1,1,1,1,1,0,0,54.427,0,1,2,1,1,2,1,0,0,90.148,0,2,2,2,2,1,1,0,0,33.76,0,1,2,1,2,1,2,0,0,64.555,0,1,2,1,2,2,2,0,0,36.062,0,2,2,2,2,1,1,64.984,66.057,67.149,2,2,2,2,2,2,1,97.551,97.551,97.897,1,1,2,1,2,2,2,0,0,33.992,0,1,1,2,2,2,1,0,0,23.97,0,2,2,2,2,1,2
+794,1,0,0,21.75,0,1,1,2,2,1,1,0,0,24.182,0,2,2,1,1,2,1,0,0,23.621,0,2,2,2,2,2,2,0,0,32.86,0,2,2,1,1,1,2,0,0,21.558,0,1,1,2,2,1,2,0,0,32.893,0,1,1,2,2,1,1,0,0,23.146,0,2,2,2,2,1,1,0,0,20.644,0,2,2,1,2,1,2,0,0,71.997,0,1,1,1,1,2,1,0,0,17.656,0,2,2,2,2,1,1,0,0,44.811,0,1,1,2,2,1,2,0,0,27.496,0,1,1,2,2,1,1,0,0,20.656,0,1,1,2,2,2,2,0,0,15.553,0,1,2,2,2,1,1
+735,1,0,0,18.921,0,1,1,2,2,1,1,0,0,27.519,0,2,2,1,1,2,1,0,0,15.734,0,2,2,2,2,1,2,0,0,38.152,0,2,2,1,1,1,2,0,0,23.398,0,1,1,1,1,1,2,0,0,43.993,0,1,1,2,2,1,2,0,0,24.28,0,2,2,2,2,1,1,0,0,30.232,0,1,1,1,2,1,2,0,0,54.998,0,1,1,1,1,2,1,0,0,13.635,0,2,2,2,2,2,2,0,0,26.713,0,1,1,1,1,1,2,0,0,21.997,0,1,1,1,1,1,1,0,0,28.585,0,1,1,2,2,1,2,0,0,17.867,0,1,1,2,2,1,1
+831,1,0,0,28.066,0,1,1,2,2,1,2,0,0,22.092,0,2,2,1,1,2,2,0,0,26.782,0,2,2,2,2,1,1,0,0,49.771,0,2,2,2,2,1,2,0,0,19.188,0,1,1,1,1,1,2,0,0,33.454,0,1,1,2,2,1,2,0,0,31.894,0,2,2,2,2,1,2,0,0,31.347,0,1,1,1,2,1,2,0,0,58.319,0,1,1,1,1,1,1,0,0,19.407,0,2,2,2,2,1,1,0,0,44.344,0,2,2,2,2,1,1,0,0,20.678,0,1,1,1,1,1,1,0,0,27.117,0,1,1,2,2,1,2,0,0,22.401,0,1,1,2,2,1,1
+987,1,0,0,20.611,0,1,1,2,2,1,2,0,0,26.957,0,2,2,1,1,2,2,0,0,19.138,0,2,2,2,2,1,1,0,0,62.383,0,2,2,1,1,1,2,0,0,32.714,0,1,1,1,1,1,1,0,0,45.643,0,1,1,2,2,1,1,0,0,30.195,0,2,2,2,2,1,1,0,0,30.835,0,1,1,1,2,1,2,0,0,61.201,0,1,1,1,1,2,2,0,0,21.327,0,2,2,2,2,1,1,0,0,58.335,0,2,2,1,1,1,2,0,0,21.748,0,1,1,1,1,1,1,0,0,29.034,0,1,1,2,2,1,2,0,0,28.067,0,2,2,2,2,1,1
+1027,1,0,0,16.984,0,1,1,2,2,1,1,0,0,51.5,0,2,2,1,2,2,2,0,0,27.955,0,2,2,2,2,1,2,0,0,32.582,0,2,2,2,2,1,2,0,0,25.449,0,1,1,1,1,1,1,0,0,54.847,0,1,1,2,2,1,1,0,0,23.941,0,2,2,2,2,1,1,0,0,28.347,0,1,1,1,2,1,2,0,0,109.943,0,1,1,1,1,1,2,0,0,22.816,0,2,2,2,2,1,2,0,0,25.24,0,1,1,1,1,1,2,0,0,27.609,0,1,1,1,1,1,1,0,0,37.362,0,1,1,2,2,1,1,0,0,24.245,0,1,1,2,2,1,1
+913,1,0,0,22.104,0,1,1,2,2,1,1,0,0,32.784,0,2,2,1,1,2,1,0,0,22.739,0,2,2,2,2,1,1,0,0,66.103,0,2,2,2,2,1,2,0,0,45.62,0,1,1,1,1,1,1,0,0,47.81,0,1,1,1,1,1,1,0,0,57.899,0,2,2,2,2,1,1,0,0,35.35,0,1,1,1,2,1,2,0,0,67.429,0,1,1,1,1,2,1,0,0,24.353,0,2,2,2,2,1,1,0,0,46.327,0,1,1,1,1,1,2,0,0,27.216,0,1,1,1,1,1,1,0,0,34.752,0,1,1,2,2,1,1,0,0,39.483,0,2,2,2,2,1,1
+1071,1,0,0,38.766,0,1,1,2,2,1,1,0,0,40.5,0,2,2,1,1,2,1,33.82,33.82,34,1,2,2,2,2,1,1,0,0,34.114,0,2,2,1,1,1,2,0,0,101.87,0,1,1,1,1,1,1,0,0,39.718,0,1,1,2,2,1,2,0,0,29.236,0,2,2,2,2,2,1,0,0,50.233,0,1,1,1,2,1,2,0,0,18.235,0,2,2,1,1,1,1,0,0,13.164,0,2,2,2,2,1,1,0,0,25.27,0,2,2,1,1,1,2,18.471,18.471,18.722,1,1,1,1,1,1,1,0,0,21.861,0,1,1,2,2,1,1,13.967,13.967,14.536,1,2,2,2,2,1,1
+1163,1,0,0,35.668,0,1,1,2,2,1,1,3.647,4.021,60.843,2,2,2,1,1,2,2,0,0,52.469,0,2,2,2,2,1,2,0,0,83.792,0,1,1,1,1,1,2,0,0,34.647,0,1,1,1,1,1,1,0,0,53.698,0,1,1,2,2,1,1,0,0,37.165,0,2,2,2,2,1,1,0,0,52.19,0,1,1,1,2,1,2,0,0,59.603,0,1,1,1,1,1,2,0,0,24.474,0,2,2,2,2,1,1,0,0,63.619,0,2,2,1,1,1,1,0,0,22.29,0,1,1,1,1,1,1,0,0,40.792,0,1,1,2,2,1,2,0,0,40.496,0,2,2,2,2,1,1
+1159,1,0,0,24.669,0,1,1,2,2,1,1,0,0,33.492,0,2,2,2,2,2,2,0,0,21.766,0,2,2,2,2,1,2,0,0,64.891,0,2,2,2,2,1,2,0,0,36.42,0,1,1,1,1,1,2,0,0,47.264,0,1,1,2,2,1,1,0,0,33.094,0,2,2,2,2,1,1,0,0,33.599,0,1,1,1,2,1,2,0,0,64.566,0,1,1,1,1,2,2,0,0,21.4,0,2,2,2,2,1,1,0,0,63.378,0,2,1,2,2,1,1,0,0,21.469,0,1,1,1,1,1,1,0,0,241.129,0,1,1,2,2,1,1,0,0,25.897,0,1,1,2,2,1,1
+1460,1,8.142,27.901,28.813,3,1,1,1,2,1,1,16.447,52.939,54.773,4,2,2,1,2,1,1,9.051,42.59,44.796,4,1,1,2,2,1,2,8.822,98.684,101.094,3,1,1,1,1,1,2,9.59,42.445,44.214,3,1,1,1,1,1,2,11.351,49.609,58.597,4,1,1,2,2,1,1,8.726,70.836,72.208,3,2,2,2,2,1,1,9.163,59.413,60.597,2,1,1,1,2,1,2,4.653,85.058,86.404,3,1,1,1,1,1,2,14.894,37.484,38.777,3,2,2,2,2,1,2,4.026,95.427,98.49,4,2,2,2,2,1,1,3.109,24.623,25.712,3,1,1,1,1,1,1,6.761,65.346,66.434,6,1,1,2,2,1,1,3.415,30.161,34.019,4,1,1,2,2,1,2
+1055,1,0,0,17.829,0,1,1,2,2,1,1,0,0,22.336,0,2,2,2,2,1,1,0,0,48.361,0,2,2,2,2,1,1,0,0,159.095,0,1,1,2,2,1,2,0,0,31.219,0,1,1,1,1,1,2,0,0,35.688,0,1,2,2,2,2,1,0,0,44.386,0,2,2,2,2,2,1,0,0,30.299,0,1,1,1,2,1,2,0,0,62.98,0,1,1,1,1,1,2,0,0,19.359,0,2,2,2,2,1,1,0,0,57.165,0,1,1,1,1,1,2,0,0,21.83,0,1,1,1,1,1,1,0,0,31.082,0,1,1,2,2,1,1,0,0,24.639,0,1,2,2,2,1,1
+702,1,0,0,21.022,0,1,1,2,2,1,1,0,0,39.007,0,2,2,1,1,2,2,0,0,21.757,0,2,2,2,2,1,2,0,0,22.678,0,2,2,1,1,1,2,0,0,22.924,0,1,1,1,1,1,1,0,0,33.325,0,1,1,2,2,1,1,20.004,20.004,24.996,1,2,2,2,2,1,1,0,0,22.214,0,1,1,1,2,1,2,0,0,40.591,0,1,1,1,1,2,2,0,0,13.134,0,2,2,2,2,1,1,0,0,25.017,0,2,2,2,2,1,1,0,0,20.803,0,1,1,1,1,1,1,0,0,21.898,0,1,1,2,2,1,1,0,0,17.935,0,1,2,2,2,1,1
+980,1,0,0,24.946,0,1,1,2,2,1,1,0,0,26.166,0,2,2,1,1,2,2,0,0,37.656,0,2,2,2,2,1,1,0,0,52.861,0,1,1,1,1,1,2,0,0,21.578,0,1,1,1,1,1,2,0,0,33.307,0,1,1,2,2,1,1,0,0,22.795,0,2,2,2,2,2,1,0,0,23.888,0,1,1,1,2,1,2,0,0,41.269,0,1,1,1,1,1,1,0,0,8.497,0,2,2,2,2,1,1,0,0,23.349,0,2,2,2,2,1,2,19.455,19.455,20.8,1,1,1,1,1,1,1,0,0,23.847,0,1,1,2,2,1,1,0,0,13.388,0,2,2,2,2,1,1
+1054,1,32.259,32.259,33.948,1,1,1,2,2,1,1,8.555,34.23,35.758,2,2,2,2,2,2,1,54.925,54.925,56.491,1,2,2,2,2,1,1,7.216,36.628,38.002,2,2,2,2,2,1,2,26.976,26.976,28.695,1,1,1,1,1,1,1,38.62,38.62,39.885,1,1,1,2,2,1,1,28.824,28.824,30.455,1,2,2,2,2,1,1,37.844,37.844,39.424,1,1,1,1,2,1,2,3.371,3.371,67.16,1,1,1,1,1,1,1,45.654,45.654,46.759,1,2,2,2,2,1,1,4.635,64.471,66.105,2,2,2,2,2,1,1,26.284,26.284,27.65,1,1,1,1,1,1,1,56.553,56.553,57.354,1,1,1,2,2,1,1,33.531,33.531,35.59,1,1,1,2,2,1,1
+1432,1,0,0,118.845,0,1,1,2,2,1,1,0,0,31.279,0,2,2,1,1,2,1,0,0,21.593,0,2,2,2,2,1,1,0,0,178.905,0,1,1,1,1,1,2,0,0,31.206,0,1,1,1,1,1,2,0,0,42.218,0,1,1,2,2,1,1,0,0,30.944,0,2,2,2,2,1,1,0,0,54.537,0,1,1,1,2,1,2,0,0,65.796,0,1,1,1,1,1,2,0,0,20.952,0,2,2,2,2,1,1,39.634,39.634,45.29,1,1,1,1,1,1,2,0,0,46.359,0,1,1,1,1,1,2,0,0,32.101,0,1,1,2,2,1,1,0,0,28.068,0,1,2,2,2,1,2
+2056,1,0,0,88.99,0,1,1,1,1,1,1,0,0,31.626,0,1,1,1,1,1,1,0,0,24.962,0,1,1,1,1,1,1,0,0,67.153,0,1,1,1,1,1,1,0,0,47.557,0,1,1,1,1,1,1,0,0,93.161,0,1,1,1,1,1,1,0,0,43.084,0,1,1,1,1,1,1,0,0,61.845,0,1,1,1,1,1,1,0,0,69.06,0,1,1,1,1,1,1,0,0,25.896,0,1,1,1,1,1,1,0,0,65.146,0,1,1,1,1,1,1,0,0,37.218,0,1,1,1,1,1,1,0,0,47.636,0,1,1,1,1,1,1,0,0,64.377,0,1,1,1,1,1,1
+1091,1,4.174,40.153,58.044,3,1,1,2,2,1,1,2.04,56.58,57.785,4,2,2,1,1,1,1,1.786,17.04,21.626,3,2,2,2,2,1,2,1.936,102.543,105.389,4,1,1,1,1,1,2,2.174,49.413,52.313,3,1,1,1,1,1,1,1.401,69.066,75.08,2,1,1,2,2,1,1,1.885,24.242,26.593,2,2,2,2,2,1,1,1.703,23.981,26.123,2,1,1,1,2,1,2,1.498,63.025,66.243,5,1,1,1,1,2,1,1.532,22.667,32.478,4,2,2,2,2,1,1,1.607,5.732,29.681,2,2,2,2,2,1,1,1.279,23.04,25.302,3,1,1,1,1,1,1,1.51,23.52,25.89,2,1,1,2,2,1,2,1.356,18.121,20.886,2,1,1,2,2,1,1
+844,1,0,0,25.39,0,1,1,2,2,1,1,0,0,28.621,0,2,2,1,1,2,2,0,0,19.94,0,2,2,2,2,1,1,0,0,51.483,0,2,2,1,1,2,2,0,0,31.862,0,1,1,1,1,1,1,0,0,34.801,0,1,1,1,1,1,2,0,0,29.07,0,2,2,2,2,1,1,0,0,26.926,0,1,1,1,2,1,2,0,0,59.571,0,1,1,1,1,1,2,0,0,16.579,0,2,2,2,2,1,2,0,0,40.702,0,1,1,1,1,1,2,0,0,21.65,0,1,1,1,1,1,1,0,0,23.655,0,2,2,2,2,2,1,24.22,24.725,25.569,2,1,1,2,2,1,1
+968,1,0,0,28.197,0,1,1,2,2,1,1,0,0,28.6,0,2,2,2,2,2,2,0,0,24.554,0,2,2,2,2,1,1,0,0,65.692,0,1,1,1,2,1,2,0,0,35.079,0,1,1,2,1,1,1,0,0,40.522,0,1,1,2,2,1,1,0,0,34.074,0,2,2,2,2,1,1,0,0,33.7,0,1,1,1,2,1,2,0,0,64.65,0,1,1,1,1,1,1,0,0,22.932,0,2,2,2,2,1,1,0,0,60.801,0,1,2,1,2,1,2,0,0,24.817,0,1,1,2,1,1,1,0,0,32.875,0,1,1,2,2,1,1,0,0,28.371,0,2,2,2,2,1,1
+2749,1,0,0,56.965,0,1,1,2,2,1,1,0,0,59.796,0,2,2,1,1,1,1,0,0,29.231,0,2,2,2,2,1,2,0,0,26.578,0,1,1,2,1,1,2,0,0,25.653,0,1,1,1,1,1,2,0,0,42.123,0,1,1,2,2,1,1,0,0,55.902,0,2,2,2,2,1,1,0,0,52.511,0,1,1,1,2,1,2,0,0,52.56,0,1,1,1,1,2,1,0,0,24.585,0,2,2,2,2,1,2,0,0,36.516,0,1,1,1,1,1,1,0,0,39.923,0,1,1,2,2,1,2,0,0,24.273,0,1,1,2,2,1,2,0,0,20.588,0,2,2,2,2,1,2
+1058,1,7.128,27.253,27.913,4,1,2,2,2,1,1,7.374,29.318,29.696,2,2,2,1,1,2,1,13.295,31.986,39.679,4,2,2,2,2,1,1,2.133,72.628,73.062,4,1,1,1,1,1,2,1.596,31.85,32.73,3,1,1,1,1,1,1,16.141,66.058,67.882,3,1,1,2,2,1,1,3.1,34.052,34.592,3,2,2,2,2,1,1,50.101,50.101,50.654,1,1,1,1,2,1,2,3.796,3.796,56.639,1,1,1,1,1,2,1,41.374,41.374,41.839,1,2,2,2,2,1,1,30.814,78.041,78.626,3,2,2,1,1,1,1,26.861,26.861,27.28,1,1,1,1,1,1,1,0,0,26.202,0,1,1,2,2,1,1,20.54,20.54,21.139,1,2,2,2,2,1,1
+651,1,0,0,16.077,0,1,1,2,2,1,1,0,0,26.332,0,1,1,1,1,1,1,0,0,14.992,0,2,2,2,2,1,1,0,0,26.499,0,2,2,1,1,1,2,0,0,24.639,0,1,1,1,1,1,1,0,0,34.365,0,1,2,2,2,1,1,0,0,34.378,0,2,2,2,2,1,1,0,0,22.97,0,1,1,1,2,1,2,0,0,54.701,0,1,1,1,1,1,1,0,0,15.425,0,2,2,2,2,1,1,0,0,24.026,0,1,1,1,1,1,1,0,0,21.9,0,1,1,1,1,1,1,0,0,22.987,0,1,1,2,2,1,1,0,0,16.623,0,1,2,2,2,1,1
+830,1,0,0,22.186,0,1,1,2,2,1,1,0,0,33.282,0,2,2,2,2,2,2,0,0,17.505,0,2,2,2,2,1,1,0,0,31.185,0,1,1,1,1,1,2,0,0,26.495,0,1,1,1,1,1,2,0,0,37.201,0,1,1,2,2,1,2,2.584,2.584,39.171,1,2,2,2,2,1,1,0,0,34.392,0,1,1,1,2,1,2,0,0,57.192,0,1,1,1,1,2,1,0,0,22.089,0,2,2,2,2,1,1,0,0,28.453,0,1,1,1,1,1,1,0,0,26.054,0,1,1,1,1,1,1,0,0,20.724,0,1,1,2,2,1,2,0,0,19.69,0,1,1,2,2,1,1
+726,1,0,0,25.813,0,1,1,2,2,1,1,0,0,27.925,0,2,2,1,1,2,1,0,0,17.699,0,2,2,2,2,1,1,0,0,50.148,0,1,1,1,1,1,2,0,0,28.065,0,1,1,2,2,1,1,0,0,32.487,0,1,1,2,2,1,2,0,0,24.674,0,2,2,2,2,1,1,0,0,29.613,0,1,1,1,2,1,2,0,0,58.882,0,1,1,1,1,2,1,0,0,19.782,0,2,2,2,2,1,1,0,0,39.624,0,2,2,2,2,1,2,0,0,21.935,0,1,1,1,1,1,1,0,0,30.469,0,1,1,2,2,1,2,0,0,26.694,0,2,2,2,2,1,1
+798,1,0,0,23.543,0,1,1,2,2,1,1,0,0,23.704,0,2,2,2,2,2,2,0,0,20.707,0,2,2,2,2,1,1,0,0,63.848,0,2,2,1,1,1,2,0,0,37.118,0,1,1,1,1,1,1,0,0,35.14,0,1,1,2,2,1,1,0,0,31.326,0,2,2,2,2,1,1,0,0,30.837,0,1,1,1,2,1,2,0,0,63.037,0,1,1,1,1,1,2,0,0,19.4,0,2,2,2,2,1,1,0,0,57.462,0,2,2,2,2,1,2,0,0,23.227,0,1,1,1,1,1,1,0,0,31.972,0,1,1,2,2,1,1,0,0,29.5,0,2,2,2,2,1,1
+1015,1,3.486,30.957,31.952,4,1,1,2,2,1,1,4.051,41.014,42.678,2,2,2,1,1,1,1,3.679,35.898,36.941,2,2,2,2,2,2,2,3.526,28.136,29.075,3,2,2,1,1,1,2,3.379,36.725,38.001,2,1,1,1,1,1,2,2.428,70.721,71.719,3,1,1,2,2,1,2,4.317,25.956,26.81,2,2,2,2,2,1,1,2.445,37.839,38.688,2,1,1,1,2,1,2,2.639,71.372,72.34,2,1,1,1,1,2,1,3.365,30.726,31.859,2,2,2,2,2,1,1,2.736,89.877,90.927,2,1,1,1,1,1,2,2.216,25.025,26.139,2,1,1,1,1,1,1,2.276,33.368,34.684,2,1,1,2,2,1,2,2.257,34.86,35.766,2,1,1,2,2,1,1
+1107,1,0,0,23.632,0,1,1,2,2,1,2,0,0,25.918,0,2,2,1,1,2,2,0,0,18.95,0,1,2,2,2,1,1,0,0,62.477,0,1,1,2,2,1,2,0,0,24.256,0,1,1,1,1,1,1,0,0,34.239,0,1,1,2,2,1,2,0,0,19.513,0,2,2,2,2,1,1,0,0,20.948,0,1,1,1,2,1,2,0,0,56.074,0,1,1,1,1,1,1,0,0,9.945,0,2,2,2,2,1,1,0,0,23.052,0,2,2,2,2,1,2,0,0,21.005,0,1,1,2,2,1,1,0,0,23.574,0,1,1,2,2,1,2,0,0,16.46,0,2,2,2,2,1,1
+1183,1,0,0,29.199,0,1,1,2,2,1,1,40.582,40.582,41.949,1,2,2,2,2,2,2,0,0,19.401,0,1,1,2,2,1,1,0,0,60.785,0,2,2,2,2,1,2,53.756,53.756,54.124,1,1,1,1,1,2,2,0,0,40.664,0,1,1,2,2,1,2,0,0,23.893,0,2,2,2,2,2,1,0,0,28.136,0,1,1,1,2,1,2,0,0,40.832,0,1,1,1,1,2,2,0,0,12.214,0,2,2,2,2,2,2,0,0,40.138,0,2,2,2,2,1,2,0,0,25.369,0,1,1,1,1,1,1,0,0,50.156,0,1,1,2,2,1,2,0,0,44.056,0,1,1,2,2,1,2
+1017,1,0,0,17.078,0,1,1,2,2,1,1,0,0,34.608,0,2,2,2,2,2,1,0,0,17.72,0,2,2,2,2,1,1,0,0,65.335,0,2,2,2,2,1,2,0,0,23.955,0,1,1,1,1,1,1,0,0,36.13,0,1,1,2,2,1,2,0,0,22.566,0,2,2,2,2,1,1,0,0,23.349,0,1,1,1,2,1,2,0,0,39.853,0,1,1,1,1,1,1,0,0,20.067,0,2,2,2,2,1,1,0,0,23.697,0,2,2,2,2,1,2,0,0,21.208,0,1,1,1,1,1,1,0,0,19.7,0,1,1,2,2,1,2,0,0,16.064,0,2,2,2,2,1,1
+794,1,1.312,23.76,24.759,5,1,2,2,2,2,1,1.575,23.333,24.933,4,2,2,2,2,2,2,10.423,10.423,11.854,1,2,2,2,2,1,1,2.961,26.217,27.145,3,2,2,1,1,1,2,31.686,32.542,34.824,2,1,1,1,1,1,1,7.749,33.079,34.704,2,1,1,2,2,1,1,1.566,25.127,25.872,5,2,2,2,2,1,1,22.388,22.388,23.358,1,1,2,1,2,1,2,1.47,45.789,52.946,4,2,2,1,1,1,2,1.444,19.084,19.939,3,2,2,2,2,1,1,1.459,22.099,25.139,3,2,2,1,2,1,2,1.578,18.77,19.701,2,1,1,1,1,1,1,1.566,19.612,21.407,3,1,1,2,2,1,2,13.947,13.947,15.839,1,2,2,2,2,1,1

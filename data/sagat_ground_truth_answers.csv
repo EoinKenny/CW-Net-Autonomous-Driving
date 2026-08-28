@@ -1,0 +1,166 @@
+Duration (in seconds),Q37,tp_First Click,tp_Last Click,tp_Page Submit,tp_Click Count,p3_1,p3_2,p3_3,p3_4,p3_5,p3_6,tcp1_First Click,tcp1_Last Click,tcp1_Page Submit,tcp1_Click Count,cp13_1,cp13_2,cp13_3,cp13_4,cp13_5,cp13_6,tcn1_First Click,tcn1_Last Click,tcn1_Page Submit,tcn1_Click Count,Q140_1,Q140_2,Q140_3,Q140_4,Q140_5,Q140_6,tap1_First Click,tap1_Last Click,tap1_Page Submit,tap1_Click Count,Q141_1,Q141_2,Q141_3,Q141_4,Q141_5,Q141_6,tan1_First Click,tan1_Last Click,tan1_Page Submit,tan1_Click Count,Q142_1,Q142_2,Q142_3,Q142_4,Q142_5,Q142_6,tbp1_First Click,tbp1_Last Click,tbp1_Page Submit,tbp1_Click Count,Q143_1,Q143_2,Q143_3,Q143_4,Q143_5,Q143_6,tbn1_First Click,tbn1_Last Click,tbn1_Page Submit,tbn1_Click Count,Q144_1,Q144_2,Q144_3,Q144_4,Q144_5,Q144_6,tac1_First Click,tac1_Last Click,tac1_Page Submit,tac1_Click Count,Q145_1,Q145_2,Q145_3,Q145_4,Q145_5,Q145_6,tcp2_First Click,tcp2_Last Click,tcp2_Page Submit,tcp2_Click Count,Q147_1,Q147_2,Q147_3,Q147_4,Q147_5,Q147_6,tcn2_First Click,tcn2_Last Click,tcn2_Page Submit,tcn2_Click Count,Q148_1,Q148_2,Q148_3,Q148_4,Q148_5,Q148_6,tap2_First Click,tap2_Last Click,tap2_Page Submit,tap2_Click Count,Q149_1,Q149_2,Q149_3,Q149_4,Q149_5,Q149_6,tan2_First Click,tan2_Last Click,tan2_Page Submit,tan2_Click Count,Q150_1,Q150_2,Q150_3,Q150_4,Q150_5,Q150_6,tbp2_First Click,tbp2_Last Click,tbp2_Page Submit,tbp2_Click Count,Q151_1,Q151_2,Q151_3,Q151_4,Q151_5,Q151_6,tbn2_First Click,tbn2_Last Click,tbn2_Page Submit,tbn2_Click Count,Q152_1,Q152_2,Q152_3,Q152_4,Q152_5,Q152_6
+Duration (in seconds),Please enter your Prolific ID,Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+Please answer the following questions carefully. - Was there a straight road in the video?","Step 2:
+Please answer the following questions carefully. - Did the AV ever detect a straight road?","Step 2:
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+Please answer the following questions carefully. - Did the AV ever detect that it was approaching a stopped vehicle?","Step 2:
+Please answer the following questions carefully. - Was the AV driving straight partly because it detected a straight road?","Step 2:
+Please answer the following questions carefully. - If there was a traffic jam ahead, would the AV have stopped?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Is the other vehicle to the AV's immediate left affecting its willingness to move?","Step 2:
+
+Please answer the following questions carefully. - When the light goes green, would the AV move faster if the car to its immediate left was gone?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV slow down partly because of the speed bump and stop sign?","Step 2:
+
+Please answer the following questions carefully. - If the speed bump and stop sign were gone, would the AV have moved faster?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV mainly stop because it detected the pedestrian?","Step 2:
+
+Please answer the following questions carefully. - If the pedestrian was not present at the end, would the AV still have stopped?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV stop mainly because it detected it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - If the stopped vehicle at the end was not in front of the AV, would the AV have moved further forward?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV stop partly because it detected pedestrians?","Step 2:
+
+Please answer the following questions carefully. - Does the video make you significantly more weary of the AV than you were before watching?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV stop partly because it detected the other cars in front of it and the red light?","Step 2:
+
+Please answer the following questions carefully. - If there were no other cars and the light was green, would the AV move forward?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter an intersection?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect an intersection?","Step 2:
+
+Please answer the following questions carefully. - Please select Yes to indicate you are paying attention","Step 2:
+
+Please answer the following questions carefully. - Please select No to indicate you are paying attention","Step 2:
+
+Please answer the following questions carefully. - Please select Yes to indicate you are paying attention","Step 2:
+
+Please answer the following questions carefully. - Please select No to indicate you are paying attention",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV drive cautiously towards the end partly because it detected pedestrians nearby?","Step 2:
+
+Please answer the following questions carefully. - If the red car was absent, would the AV have moved faster at the end?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV slow down partly because of the speed bump and stop sign?","Step 2:
+
+Please answer the following questions carefully. - If the speed bump and stop sign were not there, would the AV have moved faster?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the pedestrian traversing the crosswalk at the end the main thing effecting the AV's speed?","Step 2:
+
+Please answer the following questions carefully. - If the pedestrian traversing the crosswalk at the end was not there, would the AV have behaved similarly?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever approach a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - Was the AV ever very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect that it was very close to another vehicle?","Step 2:
+
+Please answer the following questions carefully. - Did the AV slow down mostly because it detected it was approaching a stopped vehicle?","Step 2:
+
+Please answer the following questions carefully. - If there was no stopped vehicle in front of the AV at the end, would it have moved a bit further ahead?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV stop mostly because it detected pedestrians?","Step 2:
+
+Please answer the following questions carefully. - Does the video make you significantly more weary of the AV than you were before watching?",Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,"Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a pedestrian?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever encounter a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV ever detect it was near a bike?","Step 2:
+
+Please answer the following questions carefully. - Did the AV stop mostly because it detected the stopped vehicle in front of it?","Step 2:
+
+Please answer the following questions carefully. - If there was no stopped vehicle in front of the AV at the end, would it move a bit further ahead?"
+"{""ImportId"":""duration""}","{""ImportId"":""QID37_TEXT""}","{""ImportId"":""QID122_FIRST_CLICK""}","{""ImportId"":""QID122_LAST_CLICK""}","{""ImportId"":""QID122_PAGE_SUBMIT""}","{""ImportId"":""QID122_CLICK_COUNT""}","{""ImportId"":""QID56_1""}","{""ImportId"":""QID56_2""}","{""ImportId"":""QID56_3""}","{""ImportId"":""QID56_4""}","{""ImportId"":""QID56_5""}","{""ImportId"":""QID56_6""}","{""ImportId"":""QID123_FIRST_CLICK""}","{""ImportId"":""QID123_LAST_CLICK""}","{""ImportId"":""QID123_PAGE_SUBMIT""}","{""ImportId"":""QID123_CLICK_COUNT""}","{""ImportId"":""QID61_1""}","{""ImportId"":""QID61_2""}","{""ImportId"":""QID61_3""}","{""ImportId"":""QID61_4""}","{""ImportId"":""QID61_5""}","{""ImportId"":""QID61_6""}","{""ImportId"":""QID125_FIRST_CLICK""}","{""ImportId"":""QID125_LAST_CLICK""}","{""ImportId"":""QID125_PAGE_SUBMIT""}","{""ImportId"":""QID125_CLICK_COUNT""}","{""ImportId"":""QID140_1""}","{""ImportId"":""QID140_2""}","{""ImportId"":""QID140_3""}","{""ImportId"":""QID140_4""}","{""ImportId"":""QID140_5""}","{""ImportId"":""QID140_6""}","{""ImportId"":""QID127_FIRST_CLICK""}","{""ImportId"":""QID127_LAST_CLICK""}","{""ImportId"":""QID127_PAGE_SUBMIT""}","{""ImportId"":""QID127_CLICK_COUNT""}","{""ImportId"":""QID141_1""}","{""ImportId"":""QID141_2""}","{""ImportId"":""QID141_3""}","{""ImportId"":""QID141_4""}","{""ImportId"":""QID141_5""}","{""ImportId"":""QID141_6""}","{""ImportId"":""QID129_FIRST_CLICK""}","{""ImportId"":""QID129_LAST_CLICK""}","{""ImportId"":""QID129_PAGE_SUBMIT""}","{""ImportId"":""QID129_CLICK_COUNT""}","{""ImportId"":""QID142_1""}","{""ImportId"":""QID142_2""}","{""ImportId"":""QID142_3""}","{""ImportId"":""QID142_4""}","{""ImportId"":""QID142_5""}","{""ImportId"":""QID142_6""}","{""ImportId"":""QID131_FIRST_CLICK""}","{""ImportId"":""QID131_LAST_CLICK""}","{""ImportId"":""QID131_PAGE_SUBMIT""}","{""ImportId"":""QID131_CLICK_COUNT""}","{""ImportId"":""QID143_1""}","{""ImportId"":""QID143_2""}","{""ImportId"":""QID143_3""}","{""ImportId"":""QID143_4""}","{""ImportId"":""QID143_5""}","{""ImportId"":""QID143_6""}","{""ImportId"":""QID133_FIRST_CLICK""}","{""ImportId"":""QID133_LAST_CLICK""}","{""ImportId"":""QID133_PAGE_SUBMIT""}","{""ImportId"":""QID133_CLICK_COUNT""}","{""ImportId"":""QID144_1""}","{""ImportId"":""QID144_2""}","{""ImportId"":""QID144_3""}","{""ImportId"":""QID144_4""}","{""ImportId"":""QID144_5""}","{""ImportId"":""QID144_6""}","{""ImportId"":""QID135_FIRST_CLICK""}","{""ImportId"":""QID135_LAST_CLICK""}","{""ImportId"":""QID135_PAGE_SUBMIT""}","{""ImportId"":""QID135_CLICK_COUNT""}","{""ImportId"":""QID145_1""}","{""ImportId"":""QID145_2""}","{""ImportId"":""QID145_3""}","{""ImportId"":""QID145_4""}","{""ImportId"":""QID145_5""}","{""ImportId"":""QID145_6""}","{""ImportId"":""QID124_FIRST_CLICK""}","{""ImportId"":""QID124_LAST_CLICK""}","{""ImportId"":""QID124_PAGE_SUBMIT""}","{""ImportId"":""QID124_CLICK_COUNT""}","{""ImportId"":""QID147_1""}","{""ImportId"":""QID147_2""}","{""ImportId"":""QID147_3""}","{""ImportId"":""QID147_4""}","{""ImportId"":""QID147_5""}","{""ImportId"":""QID147_6""}","{""ImportId"":""QID126_FIRST_CLICK""}","{""ImportId"":""QID126_LAST_CLICK""}","{""ImportId"":""QID126_PAGE_SUBMIT""}","{""ImportId"":""QID126_CLICK_COUNT""}","{""ImportId"":""QID148_1""}","{""ImportId"":""QID148_2""}","{""ImportId"":""QID148_3""}","{""ImportId"":""QID148_4""}","{""ImportId"":""QID148_5""}","{""ImportId"":""QID148_6""}","{""ImportId"":""QID128_FIRST_CLICK""}","{""ImportId"":""QID128_LAST_CLICK""}","{""ImportId"":""QID128_PAGE_SUBMIT""}","{""ImportId"":""QID128_CLICK_COUNT""}","{""ImportId"":""QID149_1""}","{""ImportId"":""QID149_2""}","{""ImportId"":""QID149_3""}","{""ImportId"":""QID149_4""}","{""ImportId"":""QID149_5""}","{""ImportId"":""QID149_6""}","{""ImportId"":""QID130_FIRST_CLICK""}","{""ImportId"":""QID130_LAST_CLICK""}","{""ImportId"":""QID130_PAGE_SUBMIT""}","{""ImportId"":""QID130_CLICK_COUNT""}","{""ImportId"":""QID150_1""}","{""ImportId"":""QID150_2""}","{""ImportId"":""QID150_3""}","{""ImportId"":""QID150_4""}","{""ImportId"":""QID150_5""}","{""ImportId"":""QID150_6""}","{""ImportId"":""QID132_FIRST_CLICK""}","{""ImportId"":""QID132_LAST_CLICK""}","{""ImportId"":""QID132_PAGE_SUBMIT""}","{""ImportId"":""QID132_CLICK_COUNT""}","{""ImportId"":""QID151_1""}","{""ImportId"":""QID151_2""}","{""ImportId"":""QID151_3""}","{""ImportId"":""QID151_4""}","{""ImportId"":""QID151_5""}","{""ImportId"":""QID151_6""}","{""ImportId"":""QID134_FIRST_CLICK""}","{""ImportId"":""QID134_LAST_CLICK""}","{""ImportId"":""QID134_PAGE_SUBMIT""}","{""ImportId"":""QID134_CLICK_COUNT""}","{""ImportId"":""QID152_1""}","{""ImportId"":""QID152_2""}","{""ImportId"":""QID152_3""}","{""ImportId"":""QID152_4""}","{""ImportId"":""QID152_5""}","{""ImportId"":""QID152_6""}"
+675,asdf,0,0,11.226,0,1,1,2,2,1,1,0,0,19.158,0,2,2,1,1,1,1,0,0,11.312,0,2,2,2,2,1,1,0,0,22.301,0,2,1,1,2,2,1,0,0,21.035,0,1,1,1,2,1,1,0,0,31.171,0,1,2,2,2,2,1,0,0,19.991,0,2,2,2,2,1,1,0,0,21.098,0,1,1,1,2,1,2,0,0,51.731,0,1,1,1,1,2,1,0,0,3.501,0,2,2,2,2,1,1,0,0,22.1,0,1,1,1,2,2,1,0,0,18.36,0,1,1,1,2,1,1,0,0,43.09,0,1,2,2,2,2,1,0,0,4.147,0,1,2,2,2,1,1

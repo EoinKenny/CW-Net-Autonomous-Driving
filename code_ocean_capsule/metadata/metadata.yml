@@ -1,0 +1,60 @@
+metadata_version: 1
+name: Explainable deep learning improves human mental models of self-driving cars
+description: "Self-driving cars increasingly rely on deep neural networks to achieve
+  human-like driving. However, the opacity of such black-box motion planners makes
+  it challenging for the human behind the wheel to accurately anticipate when they
+  will fail, with potentially catastrophic consequences. Here, we introduce concept-wrapper
+  network (i.e., CW-Net), a method for explaining the behavior of black-box motion
+  planners by grounding their reasoning in human-interpretable concepts. \n\n***\nEoin
+  M. Kenny and Julie A. Shah\n\n MIT, Cambridge, MA, USA\n***\nAkshay Dharmavaram,
+  Sang Uk Lee, Tung Phan-Minh, Shreyas Rajesh, Yunqing Hu, and Laura Major \n\nMotional
+  AD Inc., Boston, MA, USA\n***\nMomchil S. Tomov,\n\nDepartment of Psychology and
+  Center for Brain Science, Harvard University, Cambridge, MA, USA \n\nMotional AD
+  Inc., Boston, MA, USA\n\n\n## Data and Domain\nThis is a simple toy domain of a
+  self-driving car to illustrate the paper's algorithm on open source environments.
+  There are three concepts, \"drive straight\", \"turn left\", \"turn right\", which
+  we manually labelled 15,000+ examples of.\n\nThis script will only take a few minutes
+  to run.\n\n## Training\nNote that when you run this code the training can sometimes
+  get stuck in local minima, you want the losses to look like this around epoch 50.
+  You may need to run it a few times to get this result (on average we found it works
+  on > 50% of the runs)\n\nEpoch 50/50, Loss CE: 0.3304, Loss MSE: 0.2487, Accuracy:
+  87.97%\n\nThe important number is the Loss MSE, **if it's around 0.25 the run was
+  successful.**\n\n## Evaluation\nIt then runs for 3 simulations.\nThe results will
+  show a gif which nicely summarises the algorithm working on the first simulation.
+  You will also find a confusion matrix for classifying the three concepts 0/1/2,
+  which are \"straight road\", \"left turn\", \"right turn\". Lastly, there are losses
+  for the concept predictions and MSE for mimicking the original black-box labels.
+  We also included numpy arrays for the average rewards of CW-Net and its error for
+  a few simulations compared to the original black box as mean squared error between
+  the two."
+authors:
+- name: Eoin Kenny
+  affiliations:
+  - name: MIT
+- name: Akshay Dharmavaram
+  affiliations:
+  - name: Motional
+- name: Sang Uk Lee
+  affiliations:
+  - name: Motional
+- name: Tung Phan-Minh
+  affiliations:
+  - name: Motional
+- name: Shreyas Rajesh
+  affiliations:
+  - name: Motional
+- name: Yunqing Hu
+  affiliations:
+  - name: Motional
+- name: Laura Major
+  affiliations:
+  - name: Motional
+- name: Julie Shah
+  affiliations:
+  - name: MIT
+- name: Momchil S. Tomov
+  affiliations:
+  - name: Motional
+corresponding_contributor:
+  name: Eoin Kenny
+  email: ekenny@mit.edu

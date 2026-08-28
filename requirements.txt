@@ -1,0 +1,7 @@
+numpy>=1.23
+pandas>=1.5
+matplotlib>=3.6
+seaborn>=0.12
+scipy>=1.9
+statsmodels>=0.13
+fastdtw>=0.3

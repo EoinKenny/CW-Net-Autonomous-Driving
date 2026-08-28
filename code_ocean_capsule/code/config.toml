@@ -1,0 +1,17 @@
+seed = 12232021
+
+num_steps = 5000
+epochs_per_step = 10
+batch_size = 128
+horizon = 1024
+
+gamma = 0.99
+gae_lambda = 0.95
+clip = 0.1
+
+lr = 1e-3
+value_coef = 0.5
+entropy_coef = 0.01
+
+save_dir = 'ckpt'
+save_interval = 50
