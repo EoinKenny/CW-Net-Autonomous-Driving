@@ -1,3 +1,29 @@
+"""Original CW-Net model definitions that ran on the autonomous vehicle.
+
+These are the serial and parallel CW-Net architectures described in the paper
+(Fig. 2 / Extended Data Fig. 1), excerpted from the on-vehicle code with only
+light edits (the imports below, this docstring, and a spelling fix), so the
+file can be imported and inspected. "PW-Net" (prototype-wrapper network) was the
+development-time name of CW-Net; the class names are kept as they ran on the
+car. The models are not runnable standalone: they wrap a frozen black-box IRL
+planner whose 128-dimensional latent state is the input `x`, and the planner
+cannot be released for intellectual-property reasons (see the paper's Code
+Availability statement).
+
+Concept vector layout (num_concepts = 8):
+  [:3]  steering (Left / Right / Straight)  - softmax over 3 classes
+  [3:5] speed (Stop / Slow)                 - softmax over 2 classes
+  [5:]  ASV, Intersection, Close            - independent sigmoids
+
+Note that in the serial model the ranker consumes the RAW concept logits;
+the softmax/sigmoid activations are applied in place afterwards, only for the
+returned concept predictions.
+"""
+
+import torch
+import torch.nn as nn
+
+
 class PWNet_Serial_Balanced_Loss(nn.Module):
     def __init__(self):
         super().__init__()
@@ -85,13 +111,13 @@ class PWNet_Parallel(nn.Module):
         intersection_logits = self.intersection_head(x)
         close_logits = self.close_head(x)
 
-        concept_predicitons = torch.cat(
+        concept_predictions = torch.cat(
             (steering_logits, speed_logits, asv_logits, intersection_logits, close_logits), dim=1
         )
 
-        concept_predicitons[:, :3] = torch.softmax(concept_predicitons[:, :3], dim=1)
-        concept_predicitons[:, 3:5] = torch.softmax(concept_predicitons[:, 3:5], dim=1)
-        concept_predicitons[:, 5:] = torch.sigmoid(concept_predicitons[:, 5:])
+        concept_predictions[:, :3] = torch.softmax(concept_predictions[:, :3], dim=1)
+        concept_predictions[:, 3:5] = torch.softmax(concept_predictions[:, 3:5], dim=1)
+        concept_predictions[:, 5:] = torch.sigmoid(concept_predictions[:, 5:])
 
-        dummy_rankings = concept_predicitons[:, :1]
-        return dummy_rankings, concept_predicitons
+        dummy_rankings = concept_predictions[:, :1]
+        return dummy_rankings, concept_predictions

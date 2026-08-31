@@ -3,3 +3,5 @@ scripts/.ipynb_checkpoints
 logs/
 plots/
 .DS_Store
+sdot.log
+__pycache__/

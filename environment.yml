@@ -1,6 +1,5 @@
 name: cwnet
 channels:
-  - defaults
   - conda-forge
 dependencies:
   - python=3.10
@@ -10,5 +9,6 @@ dependencies:
   - seaborn>=0.12
   - scipy>=1.9
   - statsmodels>=0.13
+  - pip
   - pip:
       - fastdtw>=0.3

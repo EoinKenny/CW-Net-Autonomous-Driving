@@ -1,3 +1,26 @@
+"""Reproduce Supplementary Tables S8 and S9 (SAGAT reliability analysis).
+
+Table S8: Cronbach's alpha for the SAGAT perception scale (Q1-Q4) and its
+AV-state (Q2, Q4) and world-state (Q1, Q3) subscales, computed both
+classically and ordinally. Because the items are binary, the ordinal alpha
+uses tetrachoric inter-item correlations (estimated by inverting the
+bivariate-normal CDF with Brent's method, with a 0.5 continuity correction
+for empty cells).
+
+Table S9: per-question pooled accuracy, mean item variance, and the number of
+near-ceiling items (mean accuracy >= 0.85), which diagnoses why the classical
+alpha is deflated.
+
+Participant filtering matches the paper's Methods (attention checks and
+minimum viewing times; see THRESHOLDS). This preprocessing was written
+independently of reproduce_figureED7_analysis.py but was verified to select
+the identical n = 48 control + n = 51 experimental participants; the two
+groups are pooled here.
+
+Inputs: data/sagat_{control,experimental}_responses.csv and
+data/sagat_ground_truth_answers.csv.
+Output: logs/reproduce_SI_cronbach_alpha.log (markdown tables).
+"""
 from __future__ import annotations
 import re
 from pathlib import Path
@@ -10,7 +33,8 @@ DATA_DIR = Path('data')
 LOG_DIR = Path('logs')
 LOG_FILE = LOG_DIR / 'reproduce_SI_cronbach_alpha.log'
 CEILING_THRESHOLD = 0.85
-VERSION = '2026-06-07-fixed-ordinal-alpha'
+# Minimum plausible per-page viewing times in seconds (see the docstring in
+# reproduce_figureED7_analysis.py for the key naming scheme).
 THRESHOLDS = {'cp11': 8, 'cn11': 4, 'ap11': 16, 'an11': 16, 'bp11': 25, 'bn11': 15, 'ac11': 15, 'cp21': 45, 'cn21': 5, 'ap21': 18, 'an21': 15, 'bp21': 15, 'bn21': 10}
 
 def first_existing(data_dir: Path, names: Iterable[str]) -> Path:

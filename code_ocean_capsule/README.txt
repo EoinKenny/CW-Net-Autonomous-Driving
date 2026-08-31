@@ -1,49 +1,86 @@
-This is a toy version of what we did the main paper with open source environments and models.
+CW-Net toy demo (Code Ocean capsule)
+====================================
 
+This is a toy version of what we did in the main paper, using open-source
+environments and models. It is a simple toy domain of a self-driving car
+(OpenAI Gym CarRacing) that illustrates the paper's algorithm. There are
+three concepts: "drive straight", "turn left", "turn right", of which we
+manually labelled 15,000+ examples.
 
-System requirements: a general-purpose machine (e.g., AWS r5d.4xlarge) with 128 GB of memory and 16 CPUs will run this code with no issues.
+Data
+----
+The training data lives in data/ (scenario0.npy ... scenario19.npy,
+real_actions.pkl, X_train.pkl). The data ships with the Code Ocean capsule.
+It is NOT included in the git repository (see .gitignore); to run this demo
+locally, download the capsule from Code Ocean, which includes data/.
 
-Installation guide: See the environment/postinstall file with the libraries needed, we list them here for completeness also.
+System requirements
+-------------------
+Any general-purpose machine will run this code; the published capsule was
+configured with 16 CPUs and 128 GB of memory, but far less is required.
+No GPU is needed.
+
+Installation
+------------
+The capsule environment is built by environment/Dockerfile +
+environment/postInstall (see REPRODUCING.md for the Docker instructions).
+
+To set up locally instead:
 
 ```
-#!/usr/bin/env bash
-set -e
-apt-get update
-apt-get install -y swig
+bash code/setup.sh          # creates and populates a virtualenv
+```
 
-pip3 install --upgrade pip
-pip install toml
-pip install numpy
-pip3 install torch torchvision torchaudio
-pip install gym'[box2d]'
-pip install tqdm
-pip install gym==0.24.0
-pip install gym-notices==0.0.7
-pip install scikit-learn
-pip install numpy==1.26.4
-pip install matplotlib
-'''
+or install the dependencies directly:
+
+```
+sudo apt-get install swig   # needed to build box2d
+pip install -r code/requirements.txt
+```
 
 Demo
-* Run
-* Will output a gif in the results which shows the car driving with our CW-Net and the concept explanations printed on the title of the images. You will also get the loss plots, accuracy plot, and some reward data and error data. The error data is the difference between CW-Net and the original black box in Mean squared error, which should be close to zero. The reward is the enviornment reward achieved by CW-Net, we expect this to be around 220 mean to be as good as the black box original policy.
-* Runtime: a few mintues
+----
+* Run:
 
-Instructions for use NA
+```
+cd code
+bash run                    # equivalent to: python -u main.py
+```
 
+* Output (written to ../results/): a GIF showing the car driving with our
+  CW-Net and the concept explanations printed in the title of the images;
+  loss plots; an accuracy plot; a confusion matrix for classifying the three
+  concepts 0/1/2 ("straight road", "left turn", "right turn"); and numpy
+  arrays with the average rewards of CW-Net and its error compared to the
+  original black box (mean squared error between the two, which should be
+  close to zero).
+* Runtime: a few minutes.
 
+Training notes
+--------------
+When you run this code, training can sometimes get stuck in a local minimum.
+You want the losses to look like this around epoch 50:
 
-
-======= Meta Instructions =====
-
-This is a simple toy domain of a self-driving car to illustrate the paper's algorithm on open source environments. There are three concepts, "drive straight", "turn left", "turn right"
-
-python train_cwnet.py
-
-Note that when you run this code the training can sometimes get stuck in local minima, you want the losses to look like this around epoch 50. You may need to run it a few times to get this result (on average we found it works on around > 50% of the runs)
-
+```
 Epoch 50/50, Loss CE: 0.3304, Loss MSE: 0.2487, Accuracy: 87.97%
+```
 
-The important number is the Loss MSE
+The important number is the Loss MSE: if it is around 0.25 the run was
+successful. You may need to run the code a few times to get this result (on
+average we found it works on more than 50% of runs). A successful run
+achieves a mean simulation reward above 200 (typically around 220), matching
+the original black-box policy; main.py prints "Successful training!" or
+"Failed training..." accordingly.
 
-The results will show a gif which nicely summarises the algorithm working. You will also find a confusion matrix for classifying the three concepts 0/1/2, which are "straight road", "left turn", "right turn". Lastly, there are losses for the concept predictions and MSE for mimicking the original black-box labels. We also included numpy arrays for the average rewards of CW-Net and its error compared to the original black box as mean squared error between the two.
+Attribution
+-----------
+The PPO CarRacing agent (ppo.py, memory.py, games/carracing.py) and the
+pre-trained agent weights (weights/agent_weights.pt) are adapted from
+Jinay Jain's MIT-licensed "deep-racing" project:
+https://github.com/JinayJain/deep-racing
+See THIRD_PARTY_LICENSES.txt.
+
+License
+-------
+Apache License 2.0 (see LICENSE), except for the third-party components
+listed above.

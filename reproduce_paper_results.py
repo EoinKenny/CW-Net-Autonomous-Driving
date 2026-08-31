@@ -1,3 +1,13 @@
+"""Run all scripts that reproduce the paper's figures and statistics.
+
+Each script in SCRIPT_ORDER is run in a subprocess from the repository root;
+figures land in plots/, statistics logs in logs/, and each script's full
+stdout/stderr in logs/runner/<script>.log. See the README for the
+script-to-figure mapping. Total runtime is well under a minute.
+
+Usage: python reproduce_paper_results.py [--only ...] [--skip ...]
+       [--continue-on-error] [--dry-run]
+"""
 from __future__ import annotations
 import argparse
 import os
@@ -10,7 +20,7 @@ SCRIPTS_DIR = REPO_ROOT / 'scripts'
 PLOTS_DIR = REPO_ROOT / 'plots'
 LOGS_DIR = REPO_ROOT / 'logs'
 RUNNER_LOG_DIR = LOGS_DIR / 'runner'
-SCRIPT_ORDER = ['reproduce_figure3.py', 'reproduce_figureED3.py', 'reproduce_figureED4.py', 'reproduce_figureED5_analysis.py', 'reproduce_figureED7_analysis.py', 'reproduce_SI_LLM_Judge.py', 'reproduce_SI_cronbach_alpha_FIXED_ORDINAL.py']
+SCRIPT_ORDER = ['reproduce_figure3.py', 'reproduce_figureED3.py', 'reproduce_figureED4.py', 'reproduce_figureED5_analysis.py', 'reproduce_figureED7_analysis.py', 'reproduce_SI_LLM_Judge.py', 'reproduce_SI_cronbach_alpha.py']
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description='Run all scripts needed to reproduce the paper results.')
@@ -43,6 +53,9 @@ def run_script(script_name: str) -> int:
     cmd = [sys.executable, str(script_path)]
     env = os.environ.copy()
     env['PYTHONPATH'] = str(REPO_ROOT) + os.pathsep + env.get('PYTHONPATH', '')
+    # Pin the non-interactive backend so figure PDFs are identical across
+    # machines regardless of which GUI backends are installed.
+    env['MPLBACKEND'] = 'Agg'
     start = time.perf_counter()
     result = subprocess.run(cmd, cwd=REPO_ROOT, env=env, text=True, capture_output=True, check=False)
     elapsed = time.perf_counter() - start

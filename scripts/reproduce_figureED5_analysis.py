@@ -1,3 +1,29 @@
+"""Reproduce the Extended Data mental-model-vs-prediction LME figure/analysis.
+
+(Cited as Extended Data Fig. 5 in the paper body text; the corresponding
+caption in the current proof is Extended Data Fig. 6 - see the README.)
+
+Figure (plots/Comparison_Task1_vs_Task2_Stacked_Reordered.pdf): prediction
+confidence deltas by mental-model category (nearest-neighbour task and text
+rationale), for experts and non-experts.
+
+Log (logs/Comparison_Task1_vs_Task2_Stacked_Reordered_LME.log): linear
+mixed-effects models (participant random intercepts) relating prediction
+confidence change to mental-model change.
+
+Model-specification note: for experts, the categorical NN model
+(Improved/No change/Worsened, reference = Worsened) is singular because no
+expert observation falls in the 'Worsened' reference level; the log records
+this as MODEL FAILED. The expert NN effect reported in the paper caption
+(beta = 2.02, SE = 0.87, p = 0.02) therefore comes from the ordinal coding
+(Worsened=-1, No change=0, Improved=+1), whereas the non-expert NN effect
+(beta = 9.86, SE = 2.07) comes from the categorical model. The
+CAPTION-STYLE PRIMARY EFFECTS section at the end of the log lists exactly
+the models behind the caption values.
+
+Inputs: data/expert_simulator_responses.csv and
+data/non_expert_simulator_responses.csv.
+"""
 from __future__ import annotations
 from pathlib import Path
 from typing import Optional
@@ -210,6 +236,9 @@ def run_lme_analysis(viz_dfs: dict[str, pd.DataFrame], log_path: Path) -> str:
     lines.append('Primary caption-style categorical models:')
     lines.append('  NN score model: Worsened is the reference; primary effect is Improved vs Worsened.')
     lines.append('  Text rationale model: Worsened is the reference; primary effect is Improved vs Worsened.')
+    lines.append('  Where a categorical model is singular (no observations in the reference')
+    lines.append('  level), the ordinal-coding model (Worsened=-1, No change=0, Improved=+1)')
+    lines.append('  provides the caption value instead; this applies to the Experts NN model.')
     caption_effects: list[str] = []
     for group_name in ['Experts', 'Non-Experts']:
         if group_name not in viz_dfs or viz_dfs[group_name].empty:
@@ -223,20 +252,29 @@ def run_lme_analysis(viz_dfs: dict[str, pd.DataFrame], log_path: Path) -> str:
         lines.append('=' * 80)
         lines.append(group_name.upper())
         lines.append('=' * 80)
+        group_effects: list[str] = []
         nn_formula = "Score_Delta_Block2 ~ C(Bin_Block1, Treatment(reference='Worsened'))"
         nn_result = add_model_block(lines=lines, title=f'{group_name}: NN category vs prediction delta', formula=nn_formula, df=df, primary_param_contains='[T.Improved]')
         if nn_result is not None:
             primary_param = find_param_name(nn_result, '[T.Improved]')
             if primary_param is not None:
-                caption_effects.append(f'{group_name} NN category, Improved vs Worsened: {summarize_effect(nn_result, primary_param)}')
+                group_effects.append(f'{group_name} NN category, Improved vs Worsened: {summarize_effect(nn_result, primary_param)}')
         text_formula = "Score_Delta_Block2 ~ C(Bin_Text, Treatment(reference='Worsened'))"
         text_result = add_model_block(lines=lines, title=f'{group_name}: text rationale category vs prediction delta', formula=text_formula, df=df, primary_param_contains='[T.Improved]')
         if text_result is not None:
             primary_param = find_param_name(text_result, '[T.Improved]')
             if primary_param is not None:
-                caption_effects.append(f'{group_name} text rationale, Improved vs Worsened: {summarize_effect(text_result, primary_param)}')
+                group_effects.append(f'{group_name} text rationale, Improved vs Worsened: {summarize_effect(text_result, primary_param)}')
         ordinal_formula = 'Score_Delta_Block2 ~ Bin_Block1_Numeric'
-        add_model_block(lines=lines, title=f'{group_name}: ordinal NN category check', formula=ordinal_formula, df=df, primary_param_contains='Bin_Block1_Numeric')
+        ordinal_result = add_model_block(lines=lines, title=f'{group_name}: ordinal NN category check', formula=ordinal_formula, df=df, primary_param_contains='Bin_Block1_Numeric')
+        if nn_result is None and ordinal_result is not None:
+            # The categorical NN model is singular when the 'Worsened' reference
+            # level has no observations (this happens for experts); the paper
+            # caption reports the ordinal-coding effect for that group instead.
+            primary_param = find_param_name(ordinal_result, 'Bin_Block1_Numeric')
+            if primary_param is not None:
+                group_effects.insert(0, f"{group_name} NN category (ordinal coding; categorical model is singular because no observation falls in the 'Worsened' reference level): {summarize_effect(ordinal_result, primary_param)}")
+        caption_effects.extend(group_effects)
         raw_delta_formula = 'Score_Delta_Block2 ~ Score_Delta_Block1'
         add_model_block(lines=lines, title=f'{group_name}: raw NN signed-confidence delta check', formula=raw_delta_formula, df=df, primary_param_contains='Score_Delta_Block1')
     lines.append('')

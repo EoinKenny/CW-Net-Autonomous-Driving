@@ -1,21 +1,34 @@
+"""Toy self-driving demo of the CW-Net algorithm (Code Ocean capsule entrypoint).
+
+Trains a CW-Net (concept classifier + ranker) on latent states of a pre-trained
+PPO CarRacing agent (weights/agent_weights.pt, from JinayJain/deep-racing), then
+runs the wrapped agent in simulation and saves losses, a concept confusion
+matrix, rewards, and a GIF of the first simulation to ../results/.
+
+Inputs (../data/): scenario{0..19}.npy (concept labels), real_actions.pkl,
+X_train.pkl (latent states). These ship with the Code Ocean capsule; they are
+NOT included in the git repository (see code_ocean_capsule/README.txt).
+
+Success criterion: mean simulation reward > 200 (typically ~220, matching the
+original black-box policy) and final train MSE loss around 0.25. Training can
+land in a local minimum; see README.txt.
+"""
+
 import pickle
 import os
 os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
-import torch  # now safeimport torch.nn as nn
+import torch
 import torch.optim as optim
 import matplotlib.pyplot as plt
-import gym
 import toml
 import random
 import numpy as np
 import torch.nn as nn
 
+from PIL import Image
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from torch.utils.data import DataLoader, TensorDataset
-from copy import deepcopy
-from torch.utils.data import TensorDataset, DataLoader
-from os.path import join
 from games.carracing import RacingNet, CarRacing
 from ppo import PPO
 from torch.distributions import Beta
@@ -25,6 +38,10 @@ from tqdm import tqdm
 def main():
 
     set_seed(0)
+
+    # All outputs (plots, arrays, GIF) go to ../results; on Code Ocean the
+    # directory pre-exists, on a fresh local checkout it must be created first.
+    os.makedirs("../results", exist_ok=True)
 
     # Load and preprocess data
     labels = []
@@ -271,8 +288,6 @@ def main():
     ppo.load("weights/agent_weights.pt")
 
 
-    from PIL import Image
-
     # Mapping for concept predictions
     concept_mapping = {0: "Straight", 1: "Left", 2: "Right"}
 
@@ -286,8 +301,6 @@ def main():
 
     frames = []  # List to store images for GIF
 
-
-    import os
 
     # Directory path
     temp_frames_dir = "../results/temp_frames/"

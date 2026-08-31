@@ -1,3 +1,20 @@
+"""Reproduce the LLM/human interrater validation (Supplementary Information).
+
+Validates the LLM judge (GPT-5) used for the free-form text-rationale
+analysis against two human raters on the 6 non-expert participants that both
+humans rated (6 participants x 3 scenarios x 3 anchors = 54 judgments).
+Reports raw agreement and Cohen's kappa for human-human and LLM-human pairs,
+plus the LLM's accuracy on the subset where the two humans agree.
+
+Alignment: the three input CSVs share an anonymised participant_id column
+(P01-P06 are the rated participants; the LLM file additionally has P07-P30).
+Rows are matched on that ID. The ID assignment was verified against the
+original (non-anonymised) judgment files.
+
+Inputs: data/non_expert_text_rationale_llm_judgments.csv,
+data/non_expert_text_rationale_human_judge_rater{1,2}.csv.
+Output: logs/llm_human_interrater_validation.txt.
+"""
 from __future__ import annotations
 import argparse
 import csv
@@ -17,11 +34,13 @@ def read_results(path: Path) -> List[Tuple[str, Dict[str, List[int]]]]:
         if missing:
             raise ValueError(f'{path} is missing required columns: {missing}')
         id_columns = [col for col in ('participant_id', 'participant', 'id', 'subject_id', 'prolific_id', 'name') if col in fieldnames]
-        id_column = id_columns[0] if id_columns else None
+        if not id_columns:
+            raise ValueError(f'{path} has no participant ID column (expected participant_id); cannot align raters safely.')
+        id_column = id_columns[0]
         for row_num, row in enumerate(reader, start=2):
-            participant_id = (row.get(id_column) or '').strip() if id_column else ''
+            participant_id = (row.get(id_column) or '').strip()
             if not participant_id:
-                participant_id = f'row_{len(rows) + 1:03d}'
+                raise ValueError(f'{path}, row {row_num}: empty participant ID.')
             parsed: Dict[str, List[int]] = {}
             for scenario in SCENARIOS:
                 raw = (row.get(scenario) or '').strip()
@@ -36,20 +55,22 @@ def read_results(path: Path) -> List[Tuple[str, Dict[str, List[int]]]]:
     return rows
 
 def align_results(*datasets: List[Tuple[str, Dict[str, List[int]]]]) -> Tuple[List[str], List[Dict[str, Dict[str, List[int]]]]]:
+    """Match participants across datasets by their shared participant IDs.
+
+    All input files carry a participant_id column, so alignment is on the
+    intersection of IDs (each dataset's IDs must be unique). Datasets may
+    contain extra participants (e.g. the LLM file covers all 30 non-experts,
+    the rater files only the 6 rated ones); those are ignored.
+    """
     id_sets = [set(participant_id for participant_id, _ in dataset) for dataset in datasets]
-    shared_ids = set.intersection(*id_sets) if id_sets else set()
-    all_ids_are_shared = shared_ids and all(len(ids) == len(shared_ids) for ids in id_sets)
     all_ids_are_unique = all(len(ids) == len(dataset) for ids, dataset in zip(id_sets, datasets))
-    if all_ids_are_shared and all_ids_are_unique:
-        participants = sorted(shared_ids)
-        aligned = [{participant_id: values for participant_id, values in dataset} for dataset in datasets]
-        return participants, aligned
-    lengths = [len(dataset) for dataset in datasets]
-    usable_length = min(lengths) if lengths else 0
-    participants = [f'row_{i + 1:03d}' for i in range(usable_length)]
-    aligned = []
-    for dataset in datasets:
-        aligned.append({participant: values for participant, (_, values) in zip(participants, dataset[:usable_length])})
+    if not all_ids_are_unique:
+        raise ValueError('Duplicate participant IDs found within an input file; cannot align.')
+    shared_ids = set.intersection(*id_sets) if id_sets else set()
+    if not shared_ids:
+        raise ValueError('No shared participant IDs across the input files; cannot align.')
+    participants = sorted(shared_ids)
+    aligned = [{participant_id: values for participant_id, values in dataset} for dataset in datasets]
     return participants, aligned
 
 def flatten(results: Dict[str, Dict[str, List[int]]], participants: Iterable[str]) -> List[int]:

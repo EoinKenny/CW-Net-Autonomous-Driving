@@ -1,3 +1,20 @@
+"""Reproduce Figure 3 (on-road private-track results).
+
+Panels and outputs (saved to plots/):
+  Fig 3a (CLOSE): CLOSE_global.pdf (speed vs Close-concept probability with OLS
+    fit; Pearson r and intercept printed to stdout) and CLOSE_local.pdf
+    (Close-concept probability over time with driving-mode shading).
+  Fig 3b (ASV):   ASV_global.pdf (speed/ASV traces around ASV activations) and
+    ASV_local_asv.pdf / ASV_local_speed.pdf (Dynamic Time Warping alignment of
+    the cone-intervention trials; DTW distances printed to stdout).
+  Fig 3c (BIKE):  BIKE_global.pdf (speed around manual-to-autonomous
+    transitions) and BIKE_local.pdf (engagement speeds before vs after the
+    explanation, by cyclist behaviour).
+
+Inputs: the figure3_*_concept_probabilities.csv / figure3_*_vehicle_modes.csv
+pairs in data/ (anonymised vehicle logs). Run from the repository root, or via
+reproduce_paper_results.py.
+"""
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -8,8 +25,12 @@ from scipy.stats import pearsonr
 from scipy.spatial.distance import euclidean
 try:
     from fastdtw import fastdtw
-except ModuleNotFoundError:
-    fastdtw = None
+except ModuleNotFoundError as exc:
+    raise ModuleNotFoundError(
+        'fastdtw is required to reproduce the Fig 3b DTW panels '
+        '(ASV_local_asv.pdf, ASV_local_speed.pdf). '
+        "Install it with: pip install 'fastdtw>=0.3'"
+    ) from exc
 DATA = Path('data')
 PLOTS = Path('plots')
 PLOTS.mkdir(exist_ok=True)
@@ -23,9 +44,17 @@ ASV_CONCEPT_FILE = 'figure3_asv_cone_intervention_concept_probabilities.csv'
 ASV_MODES_FILE = 'figure3_asv_cone_intervention_vehicle_modes.csv'
 
 def rolling_average(x, n=30):
+    """Trailing moving average over the last n samples (the logs are ~10 Hz)."""
     return np.array([np.mean(x[max(0, i - n + 1):i + 1]) for i in range(len(x))])
 
 def parse_clock_minutes(values):
+    """Parse Excel-mangled 'MM:SS.s' timestamps into seconds within the hour.
+
+    figure3_close_vehicle_modes.csv was round-tripped through Excel, which
+    reduced its ISO timestamps to minute:second strings (e.g. '49:10.3'),
+    losing the date and hour. This recovers a monotonically increasing seconds
+    counter by unwrapping the hour rollovers.
+    """
     s = values.astype(str).str.strip()
     parts = s.str.extract(r'^(\d{1,2}):(\d{1,2}(?:\.\d+)?)$')
     if parts.isna().any().any():
@@ -43,6 +72,8 @@ def parse_clock_minutes(values):
     return pd.Series(unwrapped, index=values.index, dtype=float)
 
 def parse_timestamps(series, reference=None):
+    """Parse ISO timestamps, falling back to parse_clock_minutes for the
+    Excel-mangled CLOSE modes file (anchored to the concept file's hour)."""
     values = series.astype(str).str.strip()
     parsed = pd.Series(pd.to_datetime(values, format='%Y-%m-%d %H:%M:%S.%f', errors='coerce'), index=series.index)
     missing = parsed.isna()
@@ -65,12 +96,18 @@ def parse_timestamps(series, reference=None):
     return parsed
 
 def load_df(concept_filename, modes_filename, concept_columns=None):
+    """Load a concept-probability CSV, join the nearest vehicle-mode row by
+    timestamp, and add a 'clock' column (seconds since the first sample)."""
     df = pd.read_csv(DATA / concept_filename)
     if concept_columns is not None:
         if len(df.columns) != len(concept_columns):
             raise ValueError(f'{concept_filename} has {len(df.columns)} columns, expected {len(concept_columns)}')
         df.columns = concept_columns
     modes = pd.read_csv(DATA / modes_filename)
+    if modes['autonomous'].dtype != bool:
+        # Guard against CSV corruption (e.g. an Excel round-trip turning the
+        # column into 'TRUE'/'FALSE' strings, which would silently misparse).
+        raise TypeError(f"{modes_filename}: 'autonomous' column parsed as {modes['autonomous'].dtype}, expected bool")
     df['timestamp'] = parse_timestamps(df['timestamp'])
     modes['timestamp'] = parse_timestamps(modes['timestamp'], reference=df['timestamp'])
     df, modes = (df.sort_values('timestamp'), modes.sort_values('timestamp'))
@@ -84,12 +121,17 @@ def savefig(name):
     plt.close()
 
 def reproduce_close():
+    """Fig 3a: relationship between speed and the Close concept in the CLOSE
+    scenario, plus the concept trace around the stuck-next-to-parked-cars event."""
     concept = 'Close'
+    # The CLOSE concept CSV has no header row; these are its columns.
     close_columns = ['timestamp', 'Left', 'Right', 'Straight', 'Stop', 'Slow', 'ASV', 'Intersection', 'Close']
     df = load_df(CLOSE_CONCEPT_FILE, CLOSE_MODES_FILE, concept_columns=close_columns)
+    # Restrict to the CLOSE test drive (30 s - 1487 s), trimming the vehicle
+    # start-up and post-test log segments.
     df = df[(df.clock > 30) & (df.clock < 1487)].copy()
-    x = df[df.autonomous == True]['speed']
-    y = df[df.autonomous == True][concept]
+    x = df[df['autonomous']]['speed']
+    y = df[df['autonomous']][concept]
     coefficients = np.polyfit(x, y, 1)
     p = np.poly1d(coefficients)
     _, intercept = coefficients
@@ -104,6 +146,7 @@ def reproduce_close():
     plt.legend(loc='upper right', fontsize=14, frameon=True)
     savefig('CLOSE_global.pdf')
     df[concept] = rolling_average(df[concept].values, n=30)
+    # Zoom on the 100 s - 260 s window containing the stuck event shown in Fig 3a.
     subset = df[(df.clock > 100) & (df.clock < 260)].copy()
     x_values = subset['clock'] - subset['clock'].min()
     fig, ax = plt.subplots(figsize=(10, 6), dpi=150)
@@ -124,10 +167,13 @@ def reproduce_close():
     print('Saved CLOSE_global.pdf and CLOSE_local.pdf')
 
 def to_seconds(mmss, offset):
+    """Convert a manually annotated 'MM:SS' video time to log-clock seconds.
+    `offset` is the video-to-log clock difference for that recording."""
     mins, secs = map(int, mmss.split(':'))
     return mins * 60 + secs - offset
 
 def slice_rows(df, rows, offset):
+    """Slice the log into one DataFrame per annotated (start, end) event window."""
     out = []
     for start, end in rows:
         a, b = (to_seconds(start, offset), to_seconds(end, offset))
@@ -135,12 +181,17 @@ def slice_rows(df, rows, offset):
     return out
 
 def speed_at_auto_or_max(temp):
+    """Speed at the moment self-driving was engaged within an event window
+    (or the maximum speed if the driver never engaged it)."""
     auto = temp['autonomous'].astype(bool).values
     speed = temp['speed'].values
     idx = list(auto).index(True) if True in auto else np.argmax(speed)
     return speed[idx]
 
 def collect_transition_data(df, hz=10, after_seconds=5):
+    """Collect speed around every manual-to-autonomous transition: mean speed
+    in the second before, speed at the transition, and per-second means for
+    `after_seconds` seconds after (logs are sampled at `hz` Hz)."""
     before, transition, after = ([], [], [])
     auto = df['autonomous'].astype(bool).values
     speed = df['speed'].values
@@ -152,6 +203,8 @@ def collect_transition_data(df, hz=10, after_seconds=5):
     return (before, transition, after)
 
 def plot_bike_global(before, transition, after):
+    """Fig 3c global panel: speed trajectories around every manual-to-autonomous
+    transition in the before-explanation cyclist tests."""
     x = np.arange(-1, 6)
     plt.figure(figsize=(5, 5))
     sns.set_style('whitegrid')
@@ -172,14 +225,23 @@ def plot_bike_global(before, transition, after):
     savefig('BIKE_global.pdf')
 
 def reproduce_bike():
+    """Fig 3c: cyclist (BIKE) scenario. 'serial'/'before' = tests before the
+    safety driver saw the CW-Net explanation; 'parallel'/'after' = tests after."""
     serial_df = load_df(BIKE_BEFORE_CONCEPT_FILE, BIKE_BEFORE_MODES_FILE)
     parallel_df = load_df(BIKE_AFTER_CONCEPT_FILE, BIKE_AFTER_MODES_FILE)
     before, transition, after = collect_transition_data(serial_df)
     plot_bike_global(before, transition, after)
+    # Cyclist-test event windows, hand-annotated as 'MM:SS' video times while
+    # reviewing the recordings of the two test drives.
     serial_rows = [('10:11', '10:59'), ('13:10', '13:42'), ('15:20', '15:50'), ('17:18', '17:50'), ('18:53', '19:34'), ('22:20', '22:44'), ('25:07', '25:37'), ('26:39', '27:12'), ('58:40', '59:30'), ('61:23', '62:10'), ('64:18', '64:56'), ('67:27', '67:53'), ('70:40', '71:04'), ('72:38', '73:15'), ('78:36', '79:32'), ('81:23', '82:25'), ('85:25', '85:56'), ('86:38', '87:04'), ('88:07', '88:40'), ('88:32', '89:27')]
     parallel_rows = [('4:40', '5:25'), ('6:59', '7:37'), ('8:55', '9:30'), ('11:43', '12:30'), ('13:20', '14:00'), ('16:50', '17:50'), ('18:35', '19:33'), ('20:27', '21:00'), ('24:17', '25:20'), ('26:02', '26:53')]
+    # offset = video-to-log clock difference for each recording (seconds).
     serial_series = slice_rows(serial_df, serial_rows, offset=35)
     parallel_series = slice_rows(parallel_df, parallel_rows, offset=40)
+    # Keep only the trials that constitute complete, labelled cyclist tests
+    # (the dropped windows were aborted or otherwise unusable trials);
+    # serial_labels/parallel_labels below give each kept trial's cyclist
+    # behaviour, in the same order.
     serial_indices = [0, 3, 4, 6, 7, 8, 9, 13, 14, 15, 16, 17, 18, 19]
     serial_series = [serial_series[i] for i in serial_indices]
     parallel_series = parallel_series[1:]
@@ -192,17 +254,28 @@ def reproduce_bike():
     print('Saved BIKE_global.pdf and BIKE_local.pdf')
 
 def collect_asv_series(df, threshold, reject_high_asv=False):
+    """Extract time series around ASV-concept activations.
+
+    Scans for moments where the 1-second-ahead mean ASV probability crosses
+    `threshold` while the car is in self-driving mode, and returns up to 15 s
+    of [speed, ASV, clock] after each onset (truncated at the first manual
+    takeover). With reject_high_asv=True, keeps only sub-0.5 activations that
+    occur while moving and away from any 0.5+ spike (the '0.25 ASV' baseline
+    series in Fig 3b).
+    """
     result, skip = ([], False)
-    len_before, len_after = (2, 150)
+    len_before, len_after = (2, 150)  # samples at 10 Hz: 0.2 s before, 15 s after
     v = df['ASV'].values
     for i in range(len_before, len(v)):
         if skip:
+            # Still inside the previous activation; wait until it subsides.
             if v[i:i + 10].mean() > threshold:
                 continue
             skip = False
         if v[i:i + 10].mean() <= threshold:
             continue
         asv = df.iloc[i - len_before:i + len_after].copy()
+        # Only keep onsets that happen fully in self-driving mode.
         if asv.iloc[len_before - 2:len_before + 2]['autonomous'].mean() != 1.0:
             continue
         if reject_high_asv:
@@ -212,10 +285,11 @@ def collect_asv_series(df, threshold, reject_high_asv=False):
                 continue
             if (df.iloc[max(0, i - 50):i]['ASV'] > 0.5).mean() > 0:
                 continue
+        # Truncate the series at the first manual takeover, if any.
         counter = 0
         for _, row in asv.iloc[len_before:].iterrows():
             counter += 1
-            if row['autonomous'] == False:
+            if not row['autonomous']:
                 asv = asv.iloc[len_before:len_before + counter]
                 break
         result.append([asv['speed'].values.tolist(), asv['ASV'].values.tolist(), asv['clock'].values.tolist()])
@@ -223,15 +297,19 @@ def collect_asv_series(df, threshold, reject_high_asv=False):
     return result
 
 def pad(data, length):
+    """Right-pad each series with NaN so all series have the same length."""
     return np.array([np.pad(x, (0, length - len(x)), constant_values=np.nan) for x in data])
 
 def mean_se(x):
+    """Column-wise mean and standard error, ignoring NaN padding."""
     mean = np.nanmean(x, axis=0)
     std = np.nanstd(x, axis=0)
     n = np.sum(~np.isnan(x), axis=0)
     return (mean, std / np.sqrt(n))
 
 def plot_asv_global(result_data1, result_data2):
+    """Fig 3b global panel: mean +/- s.e.m. speed and ASV probability after
+    0.5-threshold ASV spikes vs 0.25-threshold baseline activations."""
     speeds1, asv1 = ([r[0] for r in result_data1], [r[1] for r in result_data1])
     speeds2, asv2 = ([r[0] for r in result_data2], [r[1] for r in result_data2])
     max_len = max(max(map(len, speeds1)), max(map(len, speeds2)))
@@ -256,9 +334,8 @@ def plot_asv_global(result_data1, result_data2):
     savefig('ASV_global.pdf')
 
 def plot_dtw(stats_data, value_idx, ylabel, filename):
-    if fastdtw is None:
-        print(f'Skipped {filename}: fastdtw is not installed')
-        return
+    """Fig 3b DTW panel: align the no-cone vs with-cone trial and report the
+    DTW distance (1.61 for ASV probability, 7.37 for speed in the paper)."""
     a = np.asarray(stats_data[0][value_idx], dtype=float)
     b = np.asarray(stats_data[1][value_idx], dtype=float)
     c = np.asarray(stats_data[1][2], dtype=float)
@@ -278,21 +355,22 @@ def plot_dtw(stats_data, value_idx, ylabel, filename):
     print(f'{filename}: DTW distance={distance:.2f}')
 
 def reproduce_asv():
+    """Fig 3b: ASV (hallucinated stopped vehicle) scenario, including the
+    traffic-cone intervention trials."""
     df = load_df(ASV_CONCEPT_FILE, ASV_MODES_FILE)
     df['ASV'] = rolling_average(df['ASV'].values, n=30)
     result_data1 = collect_asv_series(df, threshold=0.5, reject_high_asv=False)
     result_data2 = collect_asv_series(df, threshold=0.25, reject_high_asv=True)
     plot_asv_global(result_data1, result_data2)
+    # Cone-intervention trial windows, annotated as video times while
+    # reviewing the recording; delay = video-to-log clock difference (seconds).
     delay = 34
     cone_no = df[(df.clock > 3787 - delay) & (df.clock < 3806 - delay)]
     cone_yes = df[(df.clock > 3925 - delay) & (df.clock < 3952 - delay)]
     stats_data = [[cone_no['speed'].values, cone_no['ASV'].values, cone_no['clock'].values], [cone_yes['speed'].values, cone_yes['ASV'].values, cone_yes['clock'].values]]
     plot_dtw(stats_data, value_idx=1, ylabel='ASV Probability', filename='ASV_local_asv.pdf')
     plot_dtw(stats_data, value_idx=0, ylabel='Speed m/s', filename='ASV_local_speed.pdf')
-    if fastdtw is None:
-        print('Saved ASV_global.pdf; skipped ASV_local_asv.pdf and ASV_local_speed.pdf because fastdtw is not installed')
-    else:
-        print('Saved ASV_global.pdf, ASV_local_asv.pdf, and ASV_local_speed.pdf')
+    print('Saved ASV_global.pdf, ASV_local_asv.pdf, and ASV_local_speed.pdf')
 if __name__ == '__main__':
     reproduce_asv()
     reproduce_bike()

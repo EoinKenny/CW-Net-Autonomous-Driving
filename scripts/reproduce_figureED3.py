@@ -1,7 +1,22 @@
+"""Reproduce the Extended Data belief-update ("arrows") figure.
+
+(Cited as Extended Data Fig. 3 in the paper body text; the corresponding
+caption in the current proof is Extended Data Fig. 4 - see the README.)
+
+For each participant, draws an arrow from their average signed confidence
+before the explanation to after the explanation, for the nearest-neighbour
+task (panels a, b) and the prediction task (panels c, d), split by experts
+(a, c) and non-experts (b, d). Signed confidence is positive when the answer
+is correct and negative when it is wrong.
+
+Inputs: data/expert_simulator_responses.csv and
+data/non_expert_simulator_responses.csv.
+Output: plots/combined_movement_2x2.pdf.
+"""
 from __future__ import annotations
 import argparse
 from pathlib import Path
-from typing import Dict, Iterable, Optional
+from typing import Dict, Optional
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
@@ -13,9 +28,9 @@ FS_TITLE_TEXT = 13
 FS_PANEL_LABEL = 14
 FS_MENTAL_MODEL = 9
 FS_ROW_LABEL = 13
-QUESTIONS = ('a', 'b', 'c')
-GT_OWN_ANSWER = {'a': 2, 'b': 2, 'c': 2}
-GT_PREDICTION = {'a': 2, 'b': 2, 'c': 1}
+QUESTIONS = ('a', 'b', 'c')  # survey question blocks: a=ASV, b=BIKE, c=CLOSE
+GT_OWN_ANSWER = {'a': 2, 'b': 2, 'c': 2}  # correct nearest-neighbour answer per block
+GT_PREDICTION = {'a': 2, 'b': 2, 'c': 1}  # correct prediction answer per block
 DATA_FILES = {'Experts': 'expert_simulator_responses.csv', 'Non-Experts': 'non_expert_simulator_responses.csv'}
 COLORS = {'improved': '#2ca02c', 'worsened': '#d62728', 'unchanged': 'gray'}
 
@@ -144,7 +159,9 @@ def make_figure(datasets: Dict[str, pd.DataFrame]) -> plt.Figure:
 
 def save_figure(fig: plt.Figure, output_dir: Path) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
-    fig.savefig(output_dir / 'combined_movement_2x2.pdf', dpi=300, bbox_inches='tight')
+    output_path = output_dir / 'combined_movement_2x2.pdf'
+    fig.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f'Saved {output_path}')
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description='Plot mental-model movement for experts and non-experts.')

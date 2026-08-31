@@ -1,13 +1,11 @@
-python3 -m venv pwnet
-source pwnet/bin/activate
-pip3 install --upgrade pip
-pip install toml
-pip install numpy
-pip3 install torch torchvision torchaudio
-pip install gym'[box2d]'
-pip install tqdm
-pip install gym==0.24.0
-pip install gym-notices==0.0.7
-pip install scikit-learn
-pip install numpy==1.26.4
-pip install matplotlib
+toml
+torch
+torchvision
+torchaudio
+gym[box2d]==0.24.0
+gym-notices==0.0.7
+tqdm
+scikit-learn
+numpy==1.26.4
+matplotlib
+Pillow

@@ -46,7 +46,35 @@ pip install -r requirements.txt
 python reproduce_paper_results.py
 ```
 
-Figures are saved to `plots/` and logs to `logs/`.
+Figures are saved to `plots/` and statistics logs to `logs/` (both created on
+first run). The full run takes well under a minute on a laptop and is fully
+deterministic. The individual scripts read data via relative paths, so run
+them from the repository root (the runner does this automatically).
+
+#### Script-to-results mapping
+
+> **Note on Extended Data numbering:** the scripts are named after the
+> Extended Data citations in the paper's body text. In the current proof the
+> printed captions are shifted by one relative to those citations (e.g. the
+> belief-update figure produced by `reproduce_figureED3.py` is captioned
+> Extended Data Fig. 4). The mapping below describes each script by content.
+
+| Script | Paper result | Outputs |
+|--------|--------------|---------|
+| `reproduce_figure3.py` | Fig. 3a/b/c (on-road CLOSE, ASV, BIKE results) | `plots/CLOSE_*.pdf`, `plots/ASV_*.pdf`, `plots/BIKE_*.pdf` |
+| `reproduce_figureED3.py` | ED belief-update ("arrows") figure | `plots/combined_movement_2x2.pdf` |
+| `reproduce_figureED4.py` | ED mental-model figure (text-rationale confusion matrices + NN/rationale correlation); exact binomial tests for Hypotheses 1–3; clustered OLS + interaction from the caption | `plots/ED4_mental_model_full_figure.pdf`, `logs/mental_model_alignment_stats.log` |
+| `reproduce_figureED5_analysis.py` | ED mental-model-vs-prediction LME figure and caption statistics | `plots/Comparison_Task1_vs_Task2_Stacked_Reordered.pdf`, `logs/Comparison_Task1_vs_Task2_Stacked_Reordered_LME.log` |
+| `reproduce_figureED7_analysis.py` | ED SAGAT results figure; Welch t-tests and Cohen's d (Methods, "Public roads evaluation using SAGAT") | `plots/overall_valence_accuracy.pdf`, `logs/overall_valence_results.log` |
+| `reproduce_SI_LLM_Judge.py` | LLM-as-a-judge vs human raters interrater validation (SI) | `logs/llm_human_interrater_validation.txt` |
+| `reproduce_SI_cronbach_alpha.py` | Supplementary Tables S8 and S9 (SAGAT reliability) | `logs/reproduce_SI_cronbach_alpha.log` |
+
+Not reproducible from this repository (per the paper's Data Availability
+statement): Extended Data Table 1 and Supplementary Tables 1 and 2 (they
+require internal AV model outputs that cannot be released). The Code Ocean
+capsule demo in `code_ocean_capsule/` requires its training data, which ships
+with the capsule on Code Ocean but is not included in this repository (see
+`code_ocean_capsule/README.txt`).
 
 
 #### Options
@@ -56,7 +84,7 @@ Figures are saved to `plots/` and logs to `logs/`.
 python reproduce_paper_results.py --only reproduce_figure3.py reproduce_figureED3.py
 
 # Skip specific scripts
-python reproduce_paper_results.py --skip reproduce_SI_LLM_Judge.py
+python reproduce_paper_results.py --skip reproduce_SI_LLM_Judge.py reproduce_SI_cronbach_alpha.py
 
 # Continue past failures
 python reproduce_paper_results.py --continue-on-error
@@ -75,7 +103,7 @@ python reproduce_paper_results.py --dry-run
 | seaborn | Statistical visualizations |
 | scipy | Statistical tests, distance metrics, optimization |
 | statsmodels | Linear mixed-effects models |
-| fastdtw | Dynamic Time Warping (optional; graceful fallback) |
+| fastdtw | Dynamic Time Warping (required for the Fig. 3b DTW panels) |
 
 
 

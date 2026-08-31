@@ -1,3 +1,30 @@
+"""Reproduce the Extended Data SAGAT results figure and statistics.
+
+(Cited as Extended Data Fig. 7 in the paper body text; the corresponding
+caption in the current proof is Extended Data Fig. 8 - see the README.)
+
+Situation Awareness Global Assessment Technique (SAGAT) study on public-road
+scenarios: per-participant accuracy on perception (Q1-Q4), comprehension (Q5)
+and projection (Q6) questions, split by surprising ('positive') vs
+unsurprising ('negative') events, comparing the experimental group (CW-Net
+concept explanations) against the control group (speed/steering baseline).
+
+Outputs: plots/overall_valence_accuracy.pdf and
+logs/overall_valence_results.log (Welch t-tests and Cohen's d with 95% CIs,
+Bonferroni-corrected across the 6 comparisons).
+
+Participant filtering (per the paper's Methods): Qualtrics metadata rows are
+dropped, then attention-check failures and responses below the per-material
+minimum viewing times (THRESHOLDS, seconds) are excluded; participants with
+missing answers drop out when accuracies are computed. This yields n = 48
+control and n = 51 experimental participants. The Cronbach's alpha script
+(reproduce_SI_cronbach_alpha.py) uses an independently written variant of
+this preprocessing; the two were verified to select identical participant
+sets.
+
+Inputs: data/sagat_control_responses.csv, data/sagat_experimental_responses.csv,
+data/sagat_ground_truth_answers.csv (raw Qualtrics exports, anonymised).
+"""
 from __future__ import annotations
 import re
 from pathlib import Path
@@ -13,7 +40,7 @@ CONTROL_CSV = 'sagat_control_responses.csv'
 EXPERIMENTAL_CSV = 'sagat_experimental_responses.csv'
 GROUND_TRUTH_CSV = 'sagat_ground_truth_answers.csv'
 APPLY_ATTENTION_CHECK = True
-APPLY_TIMING_FILTERS = False
+APPLY_TIMING_FILTERS = True
 FIGURE_PATH = PLOTS_DIR / 'overall_valence_accuracy.pdf'
 LOG_PATH = LOGS_DIR / 'overall_valence_results.log'
 QUESTION_ORDER = ['perception', 'comprehension', 'projection']
@@ -21,6 +48,10 @@ GROUP_ORDER = ['Control', 'Experimental']
 VALENCE_CODE = {'positive': 'p', 'negative': 'n'}
 VALENCE_LABEL = {'positive': 'Surprising events', 'negative': 'Unsurprising events'}
 VALENCE_TITLES = {'positive': 'Surprising events\n(mirroring the private track tests)', 'negative': 'Unsurprising events\n(Checking robustness of explanations)'}
+# Minimum plausible per-page viewing times in seconds, keyed by material page
+# (first letter: a=ASV, b=BIKE/PEDESTRIAN, c=CLOSE; second: p=surprising,
+# n=unsurprising, c=attention check; then video number and page). Set to the
+# approximate video durations; faster submissions indicate skipping.
 THRESHOLDS = {'cp11': 8, 'cn11': 4, 'ap11': 16, 'an11': 16, 'bp11': 25, 'bn11': 15, 'ac11': 15, 'cp21': 45, 'cn21': 5, 'ap21': 18, 'an21': 15, 'bp21': 15, 'bn21': 10}
 
 def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
