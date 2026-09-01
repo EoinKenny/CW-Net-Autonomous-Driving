@@ -107,6 +107,14 @@ them from the repository root (the runner does this automatically).
 | `reproduce_SI_LLM_Judge.py` | LLM-as-a-judge vs human raters interrater validation (SI) | `logs/llm_human_interrater_validation.txt` |
 | `reproduce_SI_cronbach_alpha.py` | Supplementary Tables S8 and S9 (SAGAT reliability) | `logs/reproduce_SI_cronbach_alpha.log` |
 
+> **Extended Data Fig. 5 model specification:** the expert nearest-neighbour
+> effect (beta = 2.02, SE = 0.87, P = 0.021) uses ordinal coding because the
+> categorical model is singular: no expert observation falls in the
+> `Worsened` reference level. The non-expert nearest-neighbour effect
+> (beta = 9.86, SE = 2.07, P < 0.001) uses the categorical
+> `Improved`-versus-`Worsened` specification. The generated PDF and analysis
+> log state these specifications explicitly.
+
 Not reproducible from this repository (per the paper's Data Availability
 statement): Extended Data Table 1 and Supplementary Tables 1 and 2 (they
 require internal AV model outputs that cannot be released). The complete

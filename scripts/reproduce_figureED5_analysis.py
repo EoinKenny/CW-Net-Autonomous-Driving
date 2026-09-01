@@ -1,7 +1,4 @@
-"""Reproduce the Extended Data mental-model-vs-prediction LME figure/analysis.
-
-(Cited as Extended Data Fig. 5 in the paper body text; the corresponding
-caption in the current proof is Extended Data Fig. 6 - see the README.)
+"""Reproduce the Extended Data Fig. 5 mental-model-vs-prediction analysis.
 
 Figure (plots/Comparison_Task1_vs_Task2_Stacked_Reordered.pdf): prediction
 confidence deltas by mental-model category (nearest-neighbour task and text
@@ -151,7 +148,22 @@ def plot_comparison(viz_dfs: dict[str, pd.DataFrame], output_path: Path) -> None
         elif legend is not None:
             legend.remove()
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    plt.tight_layout()
+    disclosure = (
+        "Model-specification disclosure: Experts NN effect: beta=2.02, SE=0.87, p=0.021 "
+        "(ordinal coding; categorical model singular because there are no 'Worsened' observations).\n"
+        "Non-Experts NN effect: beta=9.86, SE=2.07, p<0.001 "
+        "(categorical Improved-vs-Worsened coding)."
+    )
+    fig.text(
+        0.5,
+        0.012,
+        disclosure,
+        ha='center',
+        va='bottom',
+        fontsize=9,
+        bbox={'boxstyle': 'round,pad=0.4', 'facecolor': '#f5f5f5', 'edgecolor': '#777777'},
+    )
+    plt.tight_layout(rect=(0, 0.085, 1, 1))
     fig.savefig(output_path, bbox_inches='tight')
     plt.close(fig)
 
