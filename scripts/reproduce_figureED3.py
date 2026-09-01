@@ -1,7 +1,4 @@
-"""Reproduce the Extended Data belief-update ("arrows") figure.
-
-(Cited as Extended Data Fig. 3 in the paper body text; the corresponding
-caption in the current proof is Extended Data Fig. 4 - see the README.)
+"""Reproduce the Extended Data Fig. 3 belief-update ("arrows") figure.
 
 For each participant, draws an arrow from their average signed confidence
 before the explanation to after the explanation, for the nearest-neighbour
@@ -144,7 +141,23 @@ def add_row_labels(fig: plt.Figure) -> None:
 
 def add_legend(fig: plt.Figure) -> None:
     handles = [mpatches.Patch(color=COLORS['improved'], label='Improved'), mpatches.Patch(color=COLORS['worsened'], label='Worsened'), mpatches.Patch(color=COLORS['unchanged'], label='No change')]
-    fig.legend(handles=handles, loc='lower center', bbox_to_anchor=(0.5, 0.002), ncol=3, fontsize=FS_LEGEND, frameon=False)
+    fig.legend(handles=handles, loc='lower center', bbox_to_anchor=(0.5, 0.047), ncol=3, fontsize=FS_LEGEND, frameon=False)
+
+def add_sample_size_note(fig: plt.Figure) -> None:
+    note = (
+        "Sample-size clarification: each arrow represents one participant "
+        "(9 experts; 30 non-experts), averaged across 3 scenarios.\n"
+        "The published caption's N=27 and N=90 count participant-scenario observations."
+    )
+    fig.text(
+        0.5,
+        0.006,
+        note,
+        ha='center',
+        va='bottom',
+        fontsize=8.5,
+        bbox={'boxstyle': 'round,pad=0.35', 'facecolor': '#f5f5f5', 'edgecolor': '#777777'},
+    )
 
 def make_figure(datasets: Dict[str, pd.DataFrame]) -> plt.Figure:
     fig, axes = plt.subplots(2, 2, figsize=(8.27, 11.0))
@@ -154,7 +167,8 @@ def make_figure(datasets: Dict[str, pd.DataFrame]) -> plt.Figure:
     plot_movement(axes[1, 1], datasets['Non-Experts'], title='Non-Experts', task='prediction', show_ylabel=False, panel_label='d')
     add_row_labels(fig)
     add_legend(fig)
-    plt.subplots_adjust(left=0.11, right=0.97, top=0.95, bottom=0.09, wspace=0.25, hspace=0.42)
+    add_sample_size_note(fig)
+    plt.subplots_adjust(left=0.11, right=0.97, top=0.95, bottom=0.13, wspace=0.25, hspace=0.42)
     return fig
 
 def save_figure(fig: plt.Figure, output_dir: Path) -> None:

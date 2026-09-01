@@ -1,7 +1,4 @@
-"""Reproduce the Extended Data SAGAT results figure and statistics.
-
-(Cited as Extended Data Fig. 7 in the paper body text; the corresponding
-caption in the current proof is Extended Data Fig. 8 - see the README.)
+"""Reproduce the Extended Data Fig. 7 SAGAT results figure and statistics.
 
 Situation Awareness Global Assessment Technique (SAGAT) study on public-road
 scenarios: per-participant accuracy on perception (Q1-Q4), comprehension (Q5)

@@ -97,23 +97,15 @@ them from the repository root (the runner does this automatically).
 
 #### Script-to-results mapping
 
-| Script | Paper result | Outputs |
-|--------|--------------|---------|
-| `reproduce_figure3.py` | Fig. 3a/b/c (on-road CLOSE, ASV, BIKE results) | `plots/CLOSE_*.pdf`, `plots/ASV_*.pdf`, `plots/BIKE_*.pdf` |
-| `reproduce_figureED3.py` | ED belief-update ("arrows") figure | `plots/combined_movement_2x2.pdf` |
-| `reproduce_figureED4.py` | ED mental-model figure (text-rationale confusion matrices + NN/rationale correlation); exact binomial tests for Hypotheses 1–3; clustered OLS + interaction from the caption | `plots/ED4_mental_model_full_figure.pdf`, `logs/mental_model_alignment_stats.log` |
-| `reproduce_figureED5_analysis.py` | ED mental-model-vs-prediction LME figure and caption statistics | `plots/Comparison_Task1_vs_Task2_Stacked_Reordered.pdf`, `logs/Comparison_Task1_vs_Task2_Stacked_Reordered_LME.log` |
-| `reproduce_figureED7_analysis.py` | ED SAGAT results figure; Welch t-tests and Cohen's d (Methods, "Public roads evaluation using SAGAT") | `plots/overall_valence_accuracy.pdf`, `logs/overall_valence_results.log` |
-| `reproduce_SI_LLM_Judge.py` | LLM-as-a-judge vs human raters interrater validation (SI) | `logs/llm_human_interrater_validation.txt` |
-| `reproduce_SI_cronbach_alpha.py` | Supplementary Tables S8 and S9 (SAGAT reliability) | `logs/reproduce_SI_cronbach_alpha.log` |
-
-> **Extended Data Fig. 5 model specification:** the expert nearest-neighbour
-> effect (beta = 2.02, SE = 0.87, P = 0.021) uses ordinal coding because the
-> categorical model is singular: no expert observation falls in the
-> `Worsened` reference level. The non-expert nearest-neighbour effect
-> (beta = 9.86, SE = 2.07, P < 0.001) uses the categorical
-> `Improved`-versus-`Worsened` specification. The generated PDF and analysis
-> log state these specifications explicitly.
+| Script | Paper result | Outputs | Notes |
+|--------|--------------|---------|-------|
+| `reproduce_figure3.py` | Fig. 3a/b/c (on-road CLOSE, ASV, BIKE results) | `plots/CLOSE_*.pdf`, `plots/ASV_*.pdf`, `plots/BIKE_*.pdf` | Fig. 3c's `n = 23` is the pooled total of 14 retained before-explanation and 9 after-explanation cyclist trials; the caption wording can read as though all 23 belong to the second round. For Fig. 3a, the caption reports CLOSE `n = 5,545`, whereas the released data/code give `n = 5,543`, a two-row filter-boundary difference. |
+| `reproduce_figureED3.py` | Extended Data Fig. 3 belief-update ("arrows") figure | `plots/combined_movement_2x2.pdf` | Each arrow represents one participant: 9 experts and 30 non-experts, averaged across 3 scenarios. The caption's `N = 27` and `N = 90` count participant-scenario observations. The generated PDF states this explicitly. |
+| `reproduce_figureED4.py` | Extended Data Fig. 4 mental-model figure (text-rationale confusion matrices + NN/rationale correlation); exact binomial tests for Hypotheses 1–3; clustered OLS + interaction from the caption | `plots/ED4_mental_model_full_figure.pdf`, `logs/mental_model_alignment_stats.log` | The paper reports the expert clustered-OLS value as `P = 0.243`; the released analysis gives `P = 0.241`. Both are non-significant; this minor numerical/rounding difference does not affect the interpretation. |
+| `reproduce_figureED5_analysis.py` | Extended Data Fig. 5 mental-model-vs-prediction LME figure and caption statistics | `plots/Comparison_Task1_vs_Task2_Stacked_Reordered.pdf`, `logs/Comparison_Task1_vs_Task2_Stacked_Reordered_LME.log` | The expert nearest-neighbour effect (beta = 2.02, SE = 0.87, P = 0.021) uses ordinal coding because the categorical model is singular: no expert observation falls in the `Worsened` reference level. The non-expert effect (beta = 9.86, SE = 2.07, P < 0.001) uses categorical `Improved`-versus-`Worsened` coding. The generated PDF and log state this explicitly. |
+| `reproduce_figureED7_analysis.py` | Extended Data Fig. 7 SAGAT results figure; Welch t-tests and Cohen's d (Methods, "Public roads evaluation using SAGAT") | `plots/overall_valence_accuracy.pdf`, `logs/overall_valence_results.log` | - |
+| `reproduce_SI_LLM_Judge.py` | LLM-as-a-judge vs human raters interrater validation (SI) | `logs/llm_human_interrater_validation.txt` | - |
+| `reproduce_SI_cronbach_alpha.py` | Supplementary Tables S8 and S9 (SAGAT reliability) | `logs/reproduce_SI_cronbach_alpha.log` | - |
 
 Not reproducible from this repository (per the paper's Data Availability
 statement): Extended Data Table 1 and Supplementary Tables 1 and 2 (they

@@ -1,7 +1,4 @@
-"""Reproduce the Extended Data mental-model figure and its statistics.
-
-(Cited as Extended Data Fig. 4 in the paper body text; the corresponding
-caption in the current proof is Extended Data Fig. 5 - see the README.)
+"""Reproduce the Extended Data Fig. 4 mental-model figure and statistics.
 
 Figure (plots/ED4_mental_model_full_figure.pdf):
   Rows A/B: confusion matrices of free-form text-rationale alignment for
