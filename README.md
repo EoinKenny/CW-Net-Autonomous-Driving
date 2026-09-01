@@ -40,50 +40,6 @@ conda activate cwnet
 pip install -r requirements.txt
 ```
 
-### Run the Code Ocean toy demo
-
-The Code Ocean capsule uses a separate Python 3.9 environment and includes
-all required training data. The commands below work on macOS and Linux. Run
-them from the repository root.
-
-#### 1. Create the local Python environment
-
-This only needs to be done once:
-
-```bash
-conda create --prefix "$PWD/.venv-codeocean" --override-channels --channel conda-forge python=3.9 pip=22.1.2 swig -y
-conda activate "$PWD/.venv-codeocean"
-python -m pip install --disable-pip-version-check -r code_ocean_capsule/code/requirements.txt
-```
-
-The environment is created at `.venv-codeocean/` and is ignored by git. pip
-22.1.2 is intentional because newer pip versions reject Gym 0.24.0's legacy
-package metadata.
-
-#### 2. Run the capsule
-
-Activate the environment if it is not already active, then run `main.py`:
-
-```bash
-conda activate "$PWD/.venv-codeocean"
-cd code_ocean_capsule/code
-MPLBACKEND=Agg SDL_VIDEODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 python -u main.py
-```
-
-The run trains CW-Net for 50 epochs and evaluates it in three CarRacing
-simulations. It takes a few minutes and prints `Successful training!` when
-the mean simulation reward exceeds 200. A successful run should have a final
-training MSE around 0.25.
-
-Outputs are created in `code_ocean_capsule/results/`, including:
-
-- `simulation.gif` — the first simulation with predicted concepts
-- `accuracy.pdf`, `losses.pdf`, and `confusion_matrix_concept_accuracy.pdf`
-- `rewards.npy` and `error.npy`
-
-The setup helper `bash code_ocean_capsule/code/setup.sh` can be used instead
-of the three environment-creation commands above.
-
 ### Reproduce all paper results
 
 ```bash
@@ -143,6 +99,52 @@ python reproduce_paper_results.py --dry-run
 | statsmodels | Linear mixed-effects models |
 | fastdtw | Dynamic Time Warping (required for the Fig. 3b DTW panels) |
 
+
+## Run the Code Ocean toy demo
+
+See the capsule [here](https://codeocean.com/capsule/8602909/tree/v3).
+
+The Code Ocean capsule uses a separate Python 3.9 environment and includes
+all required training data. The commands below work on macOS and Linux. Run
+them from the repository root.
+
+#### 1. Create the local Python environment
+
+This only needs to be done once:
+
+```bash
+conda create --prefix "$PWD/.venv-codeocean" --override-channels --channel conda-forge python=3.9 pip=22.1.2 swig -y
+conda activate "$PWD/.venv-codeocean"
+python -m pip install --disable-pip-version-check -r code_ocean_capsule/code/requirements.txt
+```
+
+The environment is created at `.venv-codeocean/` and is ignored by git. pip
+22.1.2 is intentional because newer pip versions reject Gym 0.24.0's legacy
+package metadata.
+
+#### 2. Run the capsule
+
+Activate the environment if it is not already active, then run `main.py`:
+
+```bash
+conda activate "$PWD/.venv-codeocean"
+cd code_ocean_capsule/code
+MPLBACKEND=Agg SDL_VIDEODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 python -u main.py
+```
+
+The run trains CW-Net for 50 epochs and evaluates it in three CarRacing
+simulations. It takes a few minutes and prints `Successful training!` when
+the mean simulation reward exceeds 200. A successful run should have a final
+training MSE around 0.25.
+
+Outputs are created in `code_ocean_capsule/results/`, including:
+
+- `simulation.gif` — the first simulation with predicted concepts
+- `accuracy.pdf`, `losses.pdf`, and `confusion_matrix_concept_accuracy.pdf`
+- `rewards.npy` and `error.npy`
+
+The setup helper `bash code_ocean_capsule/code/setup.sh` can be used instead
+of the three environment-creation commands above.
 
 
 ## License
