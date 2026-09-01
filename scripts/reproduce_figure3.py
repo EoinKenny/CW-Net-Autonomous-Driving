@@ -231,17 +231,16 @@ def reproduce_bike():
     parallel_df = load_df(BIKE_AFTER_CONCEPT_FILE, BIKE_AFTER_MODES_FILE)
     before, transition, after = collect_transition_data(serial_df)
     plot_bike_global(before, transition, after)
-    # Cyclist-test event windows, hand-annotated as 'MM:SS' video times while
+    # Road-user event windows, hand-annotated as 'MM:SS' video times while
     # reviewing the recordings of the two test drives.
     serial_rows = [('10:11', '10:59'), ('13:10', '13:42'), ('15:20', '15:50'), ('17:18', '17:50'), ('18:53', '19:34'), ('22:20', '22:44'), ('25:07', '25:37'), ('26:39', '27:12'), ('58:40', '59:30'), ('61:23', '62:10'), ('64:18', '64:56'), ('67:27', '67:53'), ('70:40', '71:04'), ('72:38', '73:15'), ('78:36', '79:32'), ('81:23', '82:25'), ('85:25', '85:56'), ('86:38', '87:04'), ('88:07', '88:40'), ('88:32', '89:27')]
     parallel_rows = [('4:40', '5:25'), ('6:59', '7:37'), ('8:55', '9:30'), ('11:43', '12:30'), ('13:20', '14:00'), ('16:50', '17:50'), ('18:35', '19:33'), ('20:27', '21:00'), ('24:17', '25:20'), ('26:02', '26:53')]
     # offset = video-to-log clock difference for each recording (seconds).
     serial_series = slice_rows(serial_df, serial_rows, offset=35)
     parallel_series = slice_rows(parallel_df, parallel_rows, offset=40)
-    # Keep only the trials that constitute complete, labelled cyclist tests
-    # (the dropped windows were aborted or otherwise unusable trials);
-    # serial_labels/parallel_labels below give each kept trial's cyclist
-    # behaviour, in the same order.
+    # Keep the cyclist trials used for Fig. 3c and exclude the pedestrian-only
+    # windows. serial_labels/parallel_labels below give each retained trial's
+    # cyclist behaviour, in the same order.
     serial_indices = [0, 3, 4, 6, 7, 8, 9, 13, 14, 15, 16, 17, 18, 19]
     serial_series = [serial_series[i] for i in serial_indices]
     parallel_series = parallel_series[1:]
