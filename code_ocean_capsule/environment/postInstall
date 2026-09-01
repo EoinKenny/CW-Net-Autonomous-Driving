@@ -3,13 +3,19 @@ set -e
 apt-get update
 apt-get install -y swig
 
-pip3 install --upgrade pip
-pip install toml
-pip3 install torch torchvision torchaudio
-pip install 'gym[box2d]'==0.24.0
-pip install gym-notices==0.0.7
-pip install tqdm
-pip install scikit-learn
-pip install numpy==1.26.4
-pip install matplotlib
-pip install Pillow
+# Gym 0.24.0 has legacy metadata rejected by pip 24.1 and newer.
+python3 -m pip install pip==22.1.2
+
+# Keep these pins in sync with code/requirements.txt.
+python3 -m pip install \
+    toml==0.10.2 \
+    torch==2.2.2 \
+    torchvision==0.17.2 \
+    torchaudio==2.2.2 \
+    'gym[box2d]==0.24.0' \
+    gym-notices==0.0.7 \
+    tqdm==4.70.0 \
+    scikit-learn==1.6.1 \
+    numpy==1.26.4 \
+    matplotlib==3.9.4 \
+    Pillow==11.3.0

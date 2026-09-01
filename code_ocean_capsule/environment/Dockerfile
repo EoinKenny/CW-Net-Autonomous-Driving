@@ -4,4 +4,4 @@ FROM registry.codeocean.com/codeocean/miniconda3:4.12.0-python3.9-ubuntu20.04
 ARG DEBIAN_FRONTEND=noninteractive
 
 COPY postInstall /
-RUN /postInstall
+RUN bash /postInstall

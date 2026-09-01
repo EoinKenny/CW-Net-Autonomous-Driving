@@ -5,3 +5,4 @@ plots/
 .DS_Store
 sdot.log
 __pycache__/
+.venv-codeocean/

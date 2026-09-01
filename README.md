@@ -71,10 +71,10 @@ them from the repository root (the runner does this automatically).
 
 Not reproducible from this repository (per the paper's Data Availability
 statement): Extended Data Table 1 and Supplementary Tables 1 and 2 (they
-require internal AV model outputs that cannot be released). The Code Ocean
-capsule demo in `code_ocean_capsule/` requires its training data, which ships
-with the capsule on Code Ocean but is not included in this repository (see
-`code_ocean_capsule/README.txt`).
+require internal AV model outputs that cannot be released). The complete
+training data for the open-source Code Ocean toy demo is included under
+`code_ocean_capsule/data/`; see `code_ocean_capsule/README.txt` for its
+separate setup and run instructions.
 
 
 #### Options
@@ -113,6 +113,7 @@ This repository contains code, anonymised data, and user-study materials. These 
 
 - Source code is licensed under the Apache License, Version 2.0. See `LICENSE.txt`.
 - Anonymised data files in `data/` are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. See `LICENSE-DATA.txt`.
+- The toy-domain training data in `code_ocean_capsule/data/` is released under CC0 1.0 Universal. See `code_ocean_capsule/data/LICENSE`.
 - User-study materials, including video stimuli showing vehicle driving scenes with overlaid concept activations, are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License unless otherwise stated. See `LICENSE-MATERIALS.txt`.
 
 

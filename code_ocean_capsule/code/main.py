@@ -6,8 +6,8 @@ runs the wrapped agent in simulation and saves losses, a concept confusion
 matrix, rewards, and a GIF of the first simulation to ../results/.
 
 Inputs (../data/): scenario{0..19}.npy (concept labels), real_actions.pkl,
-X_train.pkl (latent states). These ship with the Code Ocean capsule; they are
-NOT included in the git repository (see code_ocean_capsule/README.txt).
+X_train.pkl (latent states). The complete data export ships with both this git
+repository and the Code Ocean capsule; see code_ocean_capsule/README.txt.
 
 Success criterion: mean simulation reward > 200 (typically ~220, matching the
 original black-box policy) and final train MSE loss around 0.25. Training can
