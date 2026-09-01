@@ -97,12 +97,6 @@ them from the repository root (the runner does this automatically).
 
 #### Script-to-results mapping
 
-> **Note on Extended Data numbering:** the scripts are named after the
-> Extended Data citations in the paper's body text. In the current proof the
-> printed captions are shifted by one relative to those citations (e.g. the
-> belief-update figure produced by `reproduce_figureED3.py` is captioned
-> Extended Data Fig. 4). The mapping below describes each script by content.
-
 | Script | Paper result | Outputs |
 |--------|--------------|---------|
 | `reproduce_figure3.py` | Fig. 3a/b/c (on-road CLOSE, ASV, BIKE results) | `plots/CLOSE_*.pdf`, `plots/ASV_*.pdf`, `plots/BIKE_*.pdf` |
