@@ -101,17 +101,14 @@ python reproduce_paper_results.py --dry-run
 | fastdtw | Dynamic Time Warping (required for the Fig. 3b DTW panels) |
 
 
-## Run the Code Ocean toy demo
+## 🌊 Run the Code Ocean toy demo
 
-See the capsule [here](https://codeocean.com/capsule/8602909/tree/v3).
+🐳 **Code Ocean:** Run the complete demo instantly [here](https://codeocean.com/capsule/8602909/tree/v3).
 
-The Code Ocean capsule uses a separate Python 3.9 environment and includes
-all required training data. The commands below work on macOS and Linux. Run
-them from the repository root.
+Otherwise, you can also run from this repo with the following steps.
+The commands below work on macOS and Linux. Run them from the repository root.
 
 #### 1. Create the local Python environment
-
-This only needs to be done once:
 
 ```bash
 conda create --prefix "$PWD/.venv-codeocean" --override-channels --channel conda-forge python=3.9 pip=22.1.2 swig -y
@@ -163,15 +160,27 @@ This repository contains code, anonymised data, and user-study materials. These 
 
 ## Citation and acknowledgements
 
-This repository accompanies the paper:
+This repository accompanies the following paper:
 
-> Kenny et al., "Explainable deep learning improves human mental models of self-driving cars", Nature, 2026.
+> **Kenny, E. M., Dharmavaram, A., Lee, S. U., Phan-Minh, T., Rajesh, S., Hu, Y., Major, L., Tomov, M. S. & Shah, J. A.**
+> *Explainable deep learning improves human mental models of self-driving cars.*
+> **Nature 657 (2026).**
 
-This work was conducted in collaboration with Motional, the Massachusetts Institute of Technology, and Harvard University.
+If you use the code, data, or study materials from this repository, please cite the paper.
 
-Please cite the paper when using the code, data, or study materials from this repository.
+```bibtex
+@article{kenny2026explainable,
+  title   = {Explainable deep learning improves human mental models of self-driving cars},
+  author  = {Kenny, Eoin M. and Dharmavaram, Akshay and Lee, Sang Uk and
+             Phan-Minh, Tung and Rajesh, Shreyas and Hu, Yunqing and
+             Major, Laura and Tomov, Momchil S. and Shah, Julie A.},
+  journal = {Nature},
+  volume  = {657},
+  year    = {2026}
+}
+```
 
-
+This work was conducted in collaboration with **Motional**, the **Massachusetts Institute of Technology (MIT)**, and **Harvard University**.
 
 ## Data and materials release
 
