@@ -43,6 +43,7 @@ pip install -r requirements.txt
 ### Reproduce all paper results
 
 ```bash
+conda activate cwnet
 python reproduce_paper_results.py
 ```
 
@@ -115,21 +116,23 @@ This only needs to be done once:
 ```bash
 conda create --prefix "$PWD/.venv-codeocean" --override-channels --channel conda-forge python=3.9 pip=22.1.2 swig -y
 conda activate "$PWD/.venv-codeocean"
-python -m pip install --disable-pip-version-check -r code_ocean_capsule/code/requirements.txt
+PYTHONNOUSERSITE=1 python -m pip install --disable-pip-version-check -r code_ocean_capsule/code/requirements.txt
 ```
 
 The environment is created at `.venv-codeocean/` and is ignored by git. pip
 22.1.2 is intentional because newer pip versions reject Gym 0.24.0's legacy
-package metadata.
+package metadata. `PYTHONNOUSERSITE=1` is required so that a package already
+present in `~/.local` does not shadow the pinned version.
 
 #### 2. Run the capsule
 
-Activate the environment if it is not already active, then run `main.py`:
+Activate the environment if it is not already active, then run the capsule's
+entrypoint (`bash run`, which invokes `python -u main.py`):
 
 ```bash
 conda activate "$PWD/.venv-codeocean"
 cd code_ocean_capsule/code
-MPLBACKEND=Agg SDL_VIDEODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 python -u main.py
+MPLBACKEND=Agg SDL_VIDEODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 bash run
 ```
 
 The run trains CW-Net for 50 epochs and evaluates it in three CarRacing

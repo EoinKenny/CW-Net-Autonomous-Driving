@@ -2,4 +2,8 @@
 set -ex
 
 # This is the master script for the capsule. When you click "Reproducible Run", the code in this file will execute.
+
+# Ignore ~/.local site-packages so only the pinned requirements.txt versions load.
+export PYTHONNOUSERSITE=1
+
 python -u main.py "$@"

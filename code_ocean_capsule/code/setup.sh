@@ -31,7 +31,8 @@ else
         -y
 fi
 
-"$CONDA_COMMAND" run --prefix "$ENV_PREFIX" \
+# PYTHONNOUSERSITE hides ~/.local, else pip skips deps it finds there as satisfied.
+PYTHONNOUSERSITE=1 "$CONDA_COMMAND" run --prefix "$ENV_PREFIX" \
     python -m pip install --disable-pip-version-check \
     -r "$SCRIPT_DIR/requirements.txt"
 

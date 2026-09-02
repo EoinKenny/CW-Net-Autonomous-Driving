@@ -16,6 +16,8 @@ land in a local minimum; see README.txt.
 
 import pickle
 import os
+# Pin CPU: ppo.py binds its device at import, while CW-Net below stays on CPU.
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
 os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
 import torch
 import torch.optim as optim
